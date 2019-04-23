@@ -1,6 +1,8 @@
 {
   "pages": [
-    "pages/home/home"
+    "pages/home/home",
+    "pages/hot-movie/hot-movie",
+    "pages/detail/detail"
   ],
   "window": {
     "backgroundColor": "#F6F8FB",

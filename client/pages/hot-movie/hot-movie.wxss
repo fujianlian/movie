@@ -1,0 +1,40 @@
+/* pages/hot-movie/hot-movie.wxss */
+
+.movie-card {
+  display: flex;
+  align-items: center;
+  height: 300rpx;
+  background: white;
+  margin: 30rpx 40rpx 0;
+  border: solid 1rpx #eaeef1;
+}
+
+.movie-card:last-child {
+  margin-bottom: 30rpx;
+}
+
+.movie-image {
+  width: 203rpx;
+  height: 300rpx;
+}
+
+.movie-text-wrapper {
+  margin-left: 40rpx;
+  display: flex;
+  flex-flow: column;
+  justify-content: space-between;
+}
+
+.movie-title {
+  font-size: 36rpx;
+  line-height: 50rpx;
+  color: #333;
+  font-weight: 600;
+}
+
+.movie-category {
+  font-size: 26rpx;
+  line-height: 36rpx;
+  color: #666;
+  margin-top: 40rpx;
+}

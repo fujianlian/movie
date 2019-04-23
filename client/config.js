@@ -27,7 +27,7 @@ var config = {
     rondom: `${host}/weapp/movie`,
 
     // 电影列表
-    movieList: `${host}/weapp/movie`,
+    movieList: `${host}/weapp/movieList`,
   }
 };
 
