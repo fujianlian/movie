@@ -49,6 +49,13 @@ Page({
     });
   },
 
+  goDetail(event) {
+    let m = JSON.stringify(this.data.movie)
+    wx.navigateTo({
+      url: `/pages/detail/detail?movie=${m}`,
+    })
+  },
+
   goHot(event) {
     wx.navigateTo({
       url: '/pages/hot-movie/hot-movie',
@@ -56,6 +63,6 @@ Page({
   },
 
   goPersonal(event) {
-    
+
   }
 })

@@ -1,0 +1,20 @@
+<!--pages/detail/detail.wxml-->
+<view class='detail-wrapper'>
+  <image src='{{movie.image}}' class='movie-image'></image>
+  <view class='movie-wrapper'>
+    <view class='movie-title'>{{ movie.title }}</view>
+    <view class='movie-desc'>{{ movie.description }}</view>
+    <view class='button-wrapper'>
+      <view class='button'>
+        <view class='button-text'>
+          查看影评
+        </view>
+      </view>
+      <view class='button'>
+        <view class='button-text'>
+          添加影评
+        </view>
+      </view>
+    </view>
+  </view>
+</view>

@@ -1,7 +1,7 @@
 <!--pages/home/home.wxml-->
 <view>
   <view class='movie-wrapper'>
-    <image src='{{movie.image}}' class='movie-image'></image>
+    <image src='{{movie.image}}' class='movie-image' bindtap='goDetail'></image>
     <view class='movie-title'>{{ movie.title }}</view>
     <view class='movie-rec'>
       <image src='/images/avatar.png' class='rec-avator'></image>

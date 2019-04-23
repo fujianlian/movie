@@ -19,6 +19,29 @@ page {
   display: flex;
   align-items: center;
   height: 110rpx;
-  border-top: solid 1rpx #EAEEF1;
+  border-top: solid 1rpx #eaeef1;
   background: white;
+}
+
+.button-wrapper {
+  display: flex;
+  justify-content: space-between;
+}
+
+.button {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #acbcca;
+  width: 250rpx;
+  height: 76rpx;
+  border: solid 0.5rpx #acbcca;
+  border-radius: 8rpx;
+  margin: 100rpx 15rpx 50rpx;
+}
+
+.button-text {
+  font-size: 24rpx;
+  line-height: 34rpx;
+  color: #acbcca;
 }
