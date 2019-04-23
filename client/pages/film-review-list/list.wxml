@@ -1,0 +1,6 @@
+<!--pages/film-review-list/list.wxml-->
+<view>
+  <view class='bottom-wrapper'>
+    <view class='bottom-text' bindtap='goHome'>回到首页</view>
+  </view>
+</view>

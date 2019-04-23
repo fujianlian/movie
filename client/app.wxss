@@ -23,6 +23,14 @@ page {
   background: white;
 }
 
+.bottom-text {
+  flex: 1;
+  font-size: 30rpx;
+  line-height: 42rpx;
+  text-align: center;
+  color: #acbcca;
+}
+
 .button-wrapper {
   display: flex;
   justify-content: space-between;

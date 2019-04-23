@@ -64,5 +64,11 @@ Page({
 
   goPersonal(event) {
 
-  }
+  },
+
+  goReview(event) {
+    wx.navigateTo({
+      url: `/pages/film-review-detail/detail`,
+    })
+  },
 })

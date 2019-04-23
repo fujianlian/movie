@@ -1,0 +1,11 @@
+<!--pages/film-review-detail/detail.wxml-->
+<view>
+  <image src='	https://movie-1259058662.cos.ap-shanghai.myqcloud.com/p1461851991.jpg' class='movie-image'></image>
+  <view class='movie-wrapper'>
+    <view class='movie-title'>房产证都是</view>
+     <view class='movie-rec'>
+      <image src='/images/avatar.png' class='rec-avator'></image>
+      <view class='rec-text'>许研的影评</view>
+    </view>
+  </view>
+</view>

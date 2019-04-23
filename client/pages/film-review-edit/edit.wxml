@@ -1,0 +1,10 @@
+<!--pages/film-review/edit.wxml-->
+<view>
+  <image src='	https://movie-1259058662.cos.ap-shanghai.myqcloud.com/p1461851991.jpg' class='movie-image'></image>
+  <view class='movie-wrapper'>
+    <view class='movie-title'>房产证都是</view>
+    
+    <textarea class='edit-ipt' placeholder-class='edit-placeholder' placeholder='输入您的影评内容...' auto-focus maxlength='255' bindinput='onInput'></textarea>
+  </view>
+   <button class='bottom' type='primary'>完成</button>
+</view>
