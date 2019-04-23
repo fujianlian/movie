@@ -1,0 +1,12 @@
+{
+  "pages": [
+    "pages/home/home"
+  ],
+  "window": {
+    "backgroundColor": "#F6F8FB",
+    "backgroundTextStyle": "dark",
+    "navigationBarBackgroundColor": "#fff",
+    "navigationBarTitleText": "侃影评",
+    "navigationBarTextStyle": "black"
+  }
+}
