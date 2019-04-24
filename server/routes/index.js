@@ -44,6 +44,9 @@ router.get('/review', controllers.review.random)
 router.get('/movie', controllers.movie.list)
 
 // 收藏影评
-router.post('/review', validationMiddleware, controllers.review.collect)
+router.post('/collect', validationMiddleware, controllers.collect.collect)
+
+// 获取收藏影评列表
+router.get('/collect', validationMiddleware, controllers.collect.list)
 
 module.exports = router

@@ -42,7 +42,18 @@
 .bottom-text {
   flex: 1;
   font-size: 30rpx;
-  line-height: 42rpx;
+  line-height: 100rpx;
   text-align: center;
   color: #acbcca;
+}
+
+.login-text {
+  font-size: 30rpx;
+  line-height: 100rpx;
+  color: #acbcca;
+  background-color: transparent;
+}
+
+.login-text::after {
+  border: none;
 }

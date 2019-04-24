@@ -10,6 +10,10 @@
   </view>
   <view class='bottom-wrapper'>
     <view class='bottom-text' bindtap='goHot'>热门</view>
-    <view class='bottom-text' bindtap='goPersonal'>我的</view>
+    <view wx:if="{{!userInfo}}" class="bottom-text">
+      <button wx:if="{{locationAuthType===0}}" class="login-text" open-type='getUserInfo' bindgetuserinfo='onTapLogin'>我的</button>
+      <button wx:if="{{locationAuthType===1}}" class="login-text" open-type='openSetting' bindopensetting="onTapLogin">我的</button>
+    </view>
+    <view wx:else class='bottom-text' bindtap='goPersonal'>我的</view>
   </view>
 </view>

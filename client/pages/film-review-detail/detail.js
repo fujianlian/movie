@@ -8,7 +8,9 @@ Page({
    * 页面的初始数据
    */
   data: {
-    review: {}
+    review: {},
+    // 是否只显示影评内容
+    onlyShow: false
   },
 
   /**
@@ -17,9 +19,12 @@ Page({
   onLoad: function(options) {
     let review = this.data.review
     review = JSON.parse(options.review)
+    let onlyShow = this.data.onlyShow
+    onlyShow = options.onlyShow === undefined ? false : options.onlyShow
     review.username = review.username + '的影评'
     this.setData({
-      review
+      review,
+      onlyShow
     })
   },
 
@@ -38,27 +43,33 @@ Page({
         id: review_id
       },
       success: result => {
-        wx.hideLoading()
-
-        let data = result.data
-
+        wx.hideLoading();
+        let data = result.data;
         if (!data.code) {
-          this.setData({
-            isTrolleyEdit: false
-          })
+          if (data.data.isCollect) {
+            wx.showToast({
+              icon: 'none',
+              title: '您已收藏过该影评'
+            })
+          } else {
+            wx.showToast({
+              icon: 'none',
+              title: '收藏成功'
+            })
+          }
         } else {
           wx.showToast({
             icon: 'none',
-            title: '收藏影评失败'
+            title: '收藏失败'
           })
         }
       },
-      fail: () => {
-        wx.hideLoading()
-
+      fail: (err) => {
+        console.log(err)
+        wx.hideLoading();
         wx.showToast({
           icon: 'none',
-          title: '收藏影评失败'
+          title: '收藏失败'
         })
       }
     })

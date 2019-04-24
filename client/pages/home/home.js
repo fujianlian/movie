@@ -1,6 +1,7 @@
 // pages/home/home.js
 const qcloud = require('../../vendor/wafer2-client-sdk/index')
 const config = require('../../config.js')
+const app = getApp()
 
 Page({
 
@@ -9,7 +10,9 @@ Page({
    */
   data: {
     // 影评数据及其对应电影数据
-    movie: {}
+    movie: {},
+    // 用户信息
+    userInfo: null
   },
 
   /**
@@ -17,6 +20,25 @@ Page({
    */
   onLoad: function(options) {
     this.getRondom()
+  },
+
+  /**
+   * 生命周期函数--监听页面显示
+   */
+  onShow: function() {
+    // 同步授权状态
+    this.setData({
+      locationAuthType: app.data.locationAuthType
+    })
+    app.checkSession({
+      success: ({
+        userInfo
+      }) => {
+        this.setData({
+          userInfo
+        })
+      }
+    })
   },
 
   /**
@@ -67,13 +89,27 @@ Page({
   },
 
   goPersonal(event) {
-
+    wx.navigateTo({
+      url: '/pages/personal/personal',
+    })
   },
 
   goReview(event) {
     let review = JSON.stringify(this.data.movie)
     wx.navigateTo({
       url: `/pages/film-review-detail/detail?review=${review}`,
+    })
+  },
+
+  onTapLogin: function() {
+    app.login({
+      success: ({
+        userInfo
+      }) => {
+        this.setData({
+          userInfo: userInfo
+        })
+      }
     })
   },
 })

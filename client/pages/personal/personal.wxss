@@ -1,0 +1,77 @@
+/* client/pages/personal/personal.wxss */
+
+.top-wrapper {
+  flex: 1;
+  margin-bottom: 100rpx;
+  display: flex;
+  flex-flow: column;
+}
+
+.collect-text {
+  font-size: 28rpx;
+  line-height: 36rpx;
+  color: #ffa500;
+  text-align: center;
+  margin: 70rpx 0 40rpx;
+}
+
+.movie-card {
+  position: relative;
+  height: 300rpx;
+  background: white;
+  margin: 30rpx 40rpx 0;
+  border: solid 1rpx #eaeef1;
+}
+
+.movie-card:last-child {
+  margin-bottom: 30rpx;
+}
+
+.movie-image {
+  width: 203rpx;
+  height: 300rpx;
+}
+
+.movie-text-wrapper {
+  position: absolute;
+  top: 30rpx;
+  left: 243rpx;
+  right: 30rpx;
+  display: flex;
+  flex-flow: column;
+}
+
+.movie-title {
+  font-size: 36rpx;
+  line-height: 50rpx;
+  color: #333;
+  font-weight: 600;
+}
+
+.review-content {
+  font-size: 26rpx;
+  line-height: 36rpx;
+  color: #666;
+  margin-top: 20rpx;
+}
+
+.movie-rec {
+  position: absolute;
+  display: flex;
+  left: 253rpx;
+  bottom: 30rpx;
+  align-items: center;
+}
+
+.rec-avator {
+  width: 60rpx;
+  height: 60rpx;
+  border-radius: 30rpx;
+}
+
+.rec-text {
+  margin-left: 20rpx;
+  font-size: 26rpx;
+  line-height: 36rpx;
+  color: #666;
+}

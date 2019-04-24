@@ -12,11 +12,5 @@ module.exports = {
       ctx.state.data = {}
     }
   },
-  
-  collect: async ctx => {
-    let user = ctx.state.$wxInfo.userinfo.openId
-    let review_id = ctx.request.body.id
-    await DB.query('INSERT INTO favorite-review(user, review_id) VALUES (?, ?)', [user, id])
-    ctx.state.data = {}
-  }
+
 }

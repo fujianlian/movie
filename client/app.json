@@ -6,7 +6,8 @@
     "pages/film-review-edit/edit",
     "pages/film-review-list/list",
     "pages/film-review-detail/detail",
-    "pages/film-review-preview/preview"
+    "pages/film-review-preview/preview",
+    "pages/personal/personal"
   ],
   "window": {
     "backgroundColor": "#F6F8FB",

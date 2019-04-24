@@ -30,7 +30,10 @@ var config = {
     movieList: `${host}/weapp/movie`,
 
     // 收藏影评
-    collect: `${host}/weapp/review`,
+    collect: `${host}/weapp/collect`,
+
+    // 获取收藏影评列表
+    collectList: `${host}/weapp/collect`,
   }
 };
 
