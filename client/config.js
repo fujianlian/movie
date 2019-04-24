@@ -24,10 +24,13 @@ var config = {
     uploadUrl: `${host}/weapp/upload`,
 
     // 首页热门电影
-    rondom: `${host}/weapp/movie`,
+    rondom: `${host}/weapp/review`,
 
     // 电影列表
-    movieList: `${host}/weapp/movieList`,
+    movieList: `${host}/weapp/movie`,
+
+    // 收藏影评
+    collect: `${host}/weapp/review`,
   }
 };
 

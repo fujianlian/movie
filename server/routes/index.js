@@ -38,8 +38,12 @@ router.get('/message', controllers.message.get)
 router.post('/message', controllers.message.post)
 
 // 首页热门电影
-router.get('/movie', controllers.movie.random)
+router.get('/review', controllers.review.random)
+
 // 电影列表
-router.get('/movieList', controllers.movie.list)
+router.get('/movie', controllers.movie.list)
+
+// 收藏影评
+router.post('/review', validationMiddleware, controllers.review.collect)
 
 module.exports = router

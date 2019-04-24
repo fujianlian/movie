@@ -47,7 +47,14 @@
 
 .rec-text {
   margin-left: 20rpx;
+  font-size: 30rpx;
+  line-height: 42rpx;
+  opacity: 0.8;
+}
+
+.review-content {
+  margin: 30rpx 40rpx 0 151rpx;
   font-size: 26rpx;
-  line-height: 36rpx;
+  line-height: 40rpx;
   color: #666;
 }

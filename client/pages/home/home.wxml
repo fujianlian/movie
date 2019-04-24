@@ -4,8 +4,8 @@
     <image src='{{movie.image}}' class='movie-image' bindtap='goDetail'></image>
     <view class='movie-title'>{{ movie.title }}</view>
     <view class='movie-rec' bindtap='goReview'>
-      <image src='/images/avatar.png' class='rec-avator'></image>
-      <view class='rec-text'>许研给你推荐了一部电影</view>
+      <image src='{{ movie.avatar }}' class='rec-avator'></image>
+      <view class='rec-text'>{{ movie.username }}</view>
     </view>
   </view>
   <view class='bottom-wrapper'>

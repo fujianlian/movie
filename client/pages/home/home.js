@@ -8,6 +8,7 @@ Page({
    * 页面的初始数据
    */
   data: {
+    // 影评数据及其对应电影数据
     movie: {}
   },
 
@@ -31,8 +32,10 @@ Page({
       success: function(response) {
         wx.hideLoading()
         if (!response.data.code) {
+          let m = response.data.data;
+          m.username = m.username + '给你推荐了一部电影'
           self.setData({
-            movie: response.data.data
+            movie: m
           })
         } else {
           wx.showToast({
@@ -41,6 +44,7 @@ Page({
         }
       },
       fail: function(err) {
+        console.log(err)
         wx.hideLoading()
         wx.showToast({
           title: '加载数据失败',
@@ -67,8 +71,9 @@ Page({
   },
 
   goReview(event) {
+    let review = JSON.stringify(this.data.movie)
     wx.navigateTo({
-      url: `/pages/film-review-detail/detail`,
+      url: `/pages/film-review-detail/detail?review=${review}`,
     })
   },
 })

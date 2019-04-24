@@ -1,11 +1,24 @@
 <!--pages/film-review-detail/detail.wxml-->
 <view>
-  <image src='	https://movie-1259058662.cos.ap-shanghai.myqcloud.com/p1461851991.jpg' class='movie-image'></image>
+  <image class='movie-image' src='{{ review.image }}'></image>
   <view class='movie-wrapper'>
-    <view class='movie-title'>房产证都是</view>
-     <view class='movie-rec'>
-      <image src='/images/avatar.png' class='rec-avator'></image>
-      <view class='rec-text'>许研的影评</view>
+    <view class='movie-title'>{{ review.title }}</view>
+    <view class='movie-rec'>
+      <image src='{{ review.avatar }}' class='rec-avator'></image>
+      <view class='rec-text'>{{ review.username }}</view>
+    </view>
+    <view class='review-content'>{{ review.content }}</view>
+    <view class='button-wrapper-two'>
+      <view class='button'>
+        <view class='button-text' bindtap='collectReview'>
+          收藏影评
+        </view>
+      </view>
+      <view class='button'>
+        <view class='button-text' bindtap='editReview'>
+          写影评
+        </view>
+      </view>
     </view>
   </view>
 </view>

@@ -36,6 +36,15 @@ page {
   justify-content: space-between;
 }
 
+.button-wrapper-two{
+  position: fixed;
+  bottom: 40rpx;
+  left: 90rpx;
+  right: 90rpx;
+  display: flex;
+  justify-content: space-between;
+}
+
 .button {
   display: flex;
   align-items: center;
