@@ -2,7 +2,7 @@
   "pages": [
     "pages/home/home",
     "pages/hot-movie/hot-movie",
-    "pages/detail/detail",
+    "pages/movie-detail/detail",
     "pages/film-review-edit/edit",
     "pages/film-review-list/list",
     "pages/film-review-detail/detail",

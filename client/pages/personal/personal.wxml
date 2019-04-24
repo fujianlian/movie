@@ -2,7 +2,7 @@
 <view>
   <view class='top-wrapper'>
     <view class='collect-text'>收藏的影评</view>
-    <view wx:for='{{collectList}}' wx:key='movie' class='movie-card' data-index='{{index}}' s bindtap='goDetail'>
+    <view wx:for='{{collectList}}' wx:key='review' class='movie-card' data-index='{{index}}' s bindtap='goDetail'>
       <image src='{{item.image}}' class='movie-image'></image>
       <view class='movie-text-wrapper'>
         <view class='movie-title'>{{ item.title }}</view>

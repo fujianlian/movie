@@ -40,6 +40,9 @@ router.post('/message', controllers.message.post)
 // 首页热门电影
 router.get('/review', controllers.review.random)
 
+// 电影影评列表
+router.get('/reviewList', controllers.review.list)
+
 // 电影列表
 router.get('/movie', controllers.movie.list)
 

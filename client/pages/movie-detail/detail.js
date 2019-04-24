@@ -72,8 +72,15 @@ Page({
       });
     }
 
-    if(type){
+    if (type) {
       console.log(type)
     }
+  },
+
+  lookReview() {
+    let id = this.data.movie.id
+    wx.navigateTo({
+      url: `/pages/film-review-list/list?id=${id}`,
+    })
   }
 })

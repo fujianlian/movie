@@ -34,6 +34,10 @@ var config = {
 
     // 获取收藏影评列表
     collectList: `${host}/weapp/collect`,
+
+    // 电影影评列表
+    reviewList: `${host}/weapp/reviewList`,
+    
   }
 };
 

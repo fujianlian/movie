@@ -66,7 +66,7 @@ Page({
     let index = event.currentTarget.dataset.index
     let m = JSON.stringify(this.data.movieList[index])
     wx.navigateTo({
-      url: `/pages/detail/detail?movie=${m}`,
+      url: `/pages/movie-detail/detail?movie=${m}`,
     })
   },
 

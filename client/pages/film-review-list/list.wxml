@@ -1,5 +1,14 @@
 <!--pages/film-review-list/list.wxml-->
 <view>
+  <view class='top-wrapper'>
+    <view wx:for='{{reviewList}}' wx:key='review' class='review-card' data-index='{{index}}' bindtap='goDetail'>
+      <view class='person-rec'>
+        <image src='{{ item.avatar }}' class='rec-avator'></image>
+        <view class='rec-text'>{{ item.username }}</view>
+      </view>
+      <view class='review-content'>{{ item.content }}</view>
+    </view>
+  </view>
   <view class='bottom-wrapper'>
     <view class='bottom-text' bindtap='goHome'>回到首页</view>
   </view>

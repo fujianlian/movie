@@ -1,1 +1,47 @@
 /* pages/film-review-list/list.wxss */
+
+.top-wrapper {
+  flex: 1;
+  margin-top: 30rpx;
+  margin-bottom: 100rpx;
+  display: flex;
+  flex-flow: column;
+}
+
+.review-card {
+  display: flex;
+  flex-flow: column;
+  background: white;
+  border-bottom: solid 1rpx #eaeef1;
+  padding: 30rpx 40rpx 30rpx 50rpx;
+}
+
+.review-card.first-child {
+  margin-top: 30rpx;
+}
+
+.person-rec {
+  display: flex;
+  align-items: center;
+}
+
+.rec-avator {
+  width: 60rpx;
+  height: 60rpx;
+  border-radius: 30rpx;
+}
+
+.rec-text {
+  margin-left: 20rpx;
+  font-size: 26rpx;
+  line-height: 36rpx;
+  color: #666;
+}
+
+.review-content {
+  font-size: 26rpx;
+  line-height: 36rpx;
+  color: #666;
+  margin-top: 20rpx;
+  margin-left: 20rpx;
+}

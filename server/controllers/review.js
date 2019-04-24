@@ -13,4 +13,8 @@ module.exports = {
     }
   },
 
+  list: async ctx => {
+    let movie_id = ctx.request.query.id
+    ctx.state.data = await DB.query("SELECT review.id as review_id, review.movie_id as movie_id, review.avatar as avatar, review.content as content, review.audio as audio, review.username as username, movies.title as title, movies.image as image FROM review LEFT JOIN movies ON review.movie_id = movies.id and review.movie_id = ?", [movie_id])
+  }
 }

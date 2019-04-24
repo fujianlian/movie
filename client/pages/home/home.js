@@ -78,7 +78,7 @@ Page({
   goDetail(event) {
     let m = JSON.stringify(this.data.movie)
     wx.navigateTo({
-      url: `/pages/detail/detail?movie=${m}`,
+      url: `/pages/movie-detail/detail?movie=${m}`,
     })
   },
 
