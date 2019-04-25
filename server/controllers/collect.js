@@ -19,6 +19,6 @@ module.exports = {
 
   list: async ctx => {
     let user = ctx.state.$wxInfo.userinfo.openId
-    ctx.state.data = await DB.query("SELECT favorite.review_id as review_id, review.movie_id as movie_id, review.avatar as avatar, review.content as content, review.audio as audio, review.username as username, movies.title as title, movies.image as image FROM favorite LEFT JOIN review ON favorite.review_id = review.id LEFT JOIN movies ON review.movie_id = movies.id where favorite.user = ? order by favorite.create_time", [user])
+    ctx.state.data = await DB.query("SELECT favorite.review_id as review_id, review.movie_id as movie_id, review.avatar as avatar, review.content as content, review.audio as audio, review.username as username, movies.title as title, movies.image as image FROM favorite LEFT JOIN review ON favorite.review_id = review.id LEFT JOIN movies ON review.movie_id = movies.id where favorite.user = ? order by favorite.create_time Desc", [user])
   }
 }

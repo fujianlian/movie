@@ -1,5 +1,5 @@
 <!--pages/film-review-detail/detail.wxml-->
-<view>
+<view class='detail-wrapper'>
   <image class='movie-image' src='{{ review.image }}'></image>
   <view class='movie-wrapper'>
     <view class='movie-title'>{{ review.title }}</view>
@@ -7,25 +7,31 @@
       <image src='{{ review.avatar }}' class='rec-avator'></image>
       <view class='rec-text'>{{ review.username }}</view>
     </view>
-    <view class='review-content'>{{ review.content }}</view>
-    <view class='button-wrapper-three' wx:if='{{showCollect}}'>
-      <view class='button'>
-        <view class='button-text' bindtap='collectReview'>
+    <view class='review-content content'>{{ review.content }}</view>
+    <view class='button-wrapper-two' wx:if='{{!onlyShow}}'>
+      <view class='button' bindtap='collectReview'>
+        <view class='button-text'>
           收藏影评
         </view>
       </view>
-    </view>
-    <view class='button-wrapper-two' wx:elif='{{!onlyShow}}'>
-      <view class='button'>
-        <view class='button-text' bindtap='collectReview'>
-          收藏影评
-        </view>
-      </view>
-      <view class='button'>
-        <view class='button-text' bindtap='editReview'>
+      <view class='button' bindtap='popWindow' data-statu='open'>
+        <view class='button-text'>
           写影评
         </view>
       </view>
+    </view>
+  </view>
+  <!--mask-->
+  <view class="pop_screen" bindtap="popWindow" data-statu="close" wx:if="{{showModalStatus}}"></view>
+  <!--content-->
+  <!--使用animation属性指定需要执行的动画-->
+  <view animation="{{animationData}}" class="pop_box" wx:if="{{showModalStatus}}">
+    <!--drawer content-->
+    <view class="pop_content">
+      <view class="pop_title line" bindtap="popWindow" data-type="text" data-statu="close">文字</view>
+      <view class="pop_title" bindtap="popWindow" data-statu="close" data-type="video">音频</view>
+      <view class="line2"></view>
+      <view class="pop_title" bindtap="popWindow" data-statu="close">取消</view>
     </view>
   </view>
 </view>

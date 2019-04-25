@@ -1,8 +1,8 @@
 <!--pages/hot-movie/hot-movie.wxml-->
-<view wx:for='{{movieList}}' wx:key='movie' class='movie-card' data-index='{{index}}' bindtap='goDetail'>
-  <image src='{{item.image}}' class='movie-image'></image>
-  <view class='movie-text-wrapper'>
-    <view class='movie-title'>{{ item.title }}</view>
-    <view class='movie-category'>类型：{{ item.category }}</view>
+<view wx:for='{{movieList}}' wx:key='movie' class='hot-card' data-index='{{index}}' bindtap='goDetail'>
+  <image src='{{item.image}}' class='hot-image'></image>
+  <view class='hot-text-wrapper'>
+    <view class='hot-title'>{{ item.title }}</view>
+    <view class='hot-category'>类型：{{ item.category }}</view>
   </view>
 </view>

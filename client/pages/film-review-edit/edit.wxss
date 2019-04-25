@@ -1,34 +1,6 @@
 /* pages/film-review/edit.wxss */
-
-.movie-image {
-  position: absolute;
-  width: 204rpx;
-  height: 300rpx;
-  top: 30rpx;
-  left: 273rpx;
-  z-index: 99;
-}
-
-.movie-wrapper {
-  position: fixed;
-  top: 60rpx;
-  left: 50rpx;
-  right: 50rpx;
-  bottom: 140rpx;
-  display: flex;
-  flex-flow: column;
-  align-items: center;
-  background: white;
-  border: solid 1rpx #eaeef1;
-  border-radius: 10rpx;
-}
-
-.movie-title {
-  padding-top: 295rpx;
-  font-size: 36rpx;
-  line-height: 50rpx;
-  color: #333;
-  font-weight: 70;
+.wrapper {
+  bottom: 140rpx
 }
 
 .edit-ipt {

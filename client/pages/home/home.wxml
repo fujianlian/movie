@@ -1,11 +1,11 @@
 <!--pages/home/home.wxml-->
 <view>
-  <view class='movie-wrapper'>
-    <image src='{{movie.image}}' class='movie-image' bindtap='goDetail'></image>
-    <view class='movie-title'>{{ movie.title }}</view>
-    <view class='movie-rec' bindtap='goReview'>
-      <image src='{{ movie.avatar }}' class='rec-avator'></image>
-      <view class='rec-text'>{{ movie.username }}</view>
+  <view class='hot-wrapper'>
+    <image src='{{movie.image}}' class='hot-image' bindtap='goDetail'></image>
+    <view class='hot-title'>{{ movie.title }}</view>
+    <view class='hot-rec' bindtap='goReview'>
+      <image src='{{ movie.avatar }}' class='hot-avatar'></image>
+      <view class='hot-username'>{{ movie.username }}</view>
     </view>
   </view>
   <view class='bottom-wrapper'>

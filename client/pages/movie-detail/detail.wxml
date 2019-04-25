@@ -1,7 +1,7 @@
 <!--pages/detail/detail.wxml-->
 <view class='detail-wrapper'>
   <image src='{{movie.image}}' class='movie-image'></image>
-  <view class='movie-wrapper'>
+  <view class='movie-card-wrapper'>
     <view class='movie-title'>{{ movie.title }}</view>
     <view class='movie-desc'>{{ movie.description }}</view>
     <view class='button-wrapper'>

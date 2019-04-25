@@ -1,42 +1,29 @@
 /* pages/home/home.wxss */
 
-.movie-wrapper {
+.hot-wrapper {
   display: flex;
   flex-flow: column;
   margin-top: 60rpx;
   align-items: center;
 }
 
-.movie-image {
+.hot-image {
   width: 500rpx;
   height: 740rpx;
 }
 
-.movie-title {
+.hot-title {
   margin-top: 40rpx;
   font-size: 36rpx;
   line-height: 50rpx;
   color: #333;
-  font-weight: 600;
+  font-weight: 600
 }
 
-.movie-rec {
+.hot-rec {
   display: flex;
   margin-top: 20rpx;
-  align-items: center;
-}
-
-.rec-avator {
-  width: 60rpx;
-  height: 60rpx;
-  border-radius: 30rpx;
-}
-
-.rec-text {
-  margin-left: 20rpx;
-  font-size: 26rpx;
-  line-height: 36rpx;
-  color: #666;
+  align-items: center
 }
 
 .bottom-text {
@@ -44,16 +31,16 @@
   font-size: 30rpx;
   line-height: 100rpx;
   text-align: center;
-  color: #acbcca;
+  color: #acbcca
 }
 
 .login-text {
   font-size: 30rpx;
   line-height: 100rpx;
   color: #acbcca;
-  background-color: transparent;
+  background-color: transparent
 }
 
 .login-text::after {
-  border: none;
+  border: none
 }

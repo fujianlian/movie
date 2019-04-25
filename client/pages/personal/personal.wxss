@@ -15,7 +15,7 @@
   margin: 70rpx 0 40rpx;
 }
 
-.movie-card {
+.collect-card {
   position: relative;
   height: 300rpx;
   background: white;
@@ -23,16 +23,16 @@
   border: solid 1rpx #eaeef1;
 }
 
-.movie-card:last-child {
+.collect-card:last-child {
   margin-bottom: 30rpx;
 }
 
-.movie-image {
+.collect-image {
   width: 203rpx;
   height: 300rpx;
 }
 
-.movie-text-wrapper {
+.collect-text-wrapper {
   position: absolute;
   top: 30rpx;
   left: 243rpx;
@@ -58,10 +58,7 @@ word-break: break-all;
 -webkit-line-clamp: 2;
 */
 
-.review-content {
-  font-size: 26rpx;
-  line-height: 36rpx;
-  color: #666;
+.content {
   margin-top: 20rpx;
   display: -webkit-box;
   overflow: hidden;
@@ -71,23 +68,10 @@ word-break: break-all;
   -webkit-line-clamp: 2;
 }
 
-.movie-rec {
+.collect-rec {
   position: absolute;
   display: flex;
   left: 253rpx;
   bottom: 30rpx;
-  align-items: center;
-}
-
-.rec-avator {
-  width: 60rpx;
-  height: 60rpx;
-  border-radius: 30rpx;
-}
-
-.rec-text {
-  margin-left: 20rpx;
-  font-size: 26rpx;
-  line-height: 36rpx;
-  color: #666;
+  align-items: center
 }

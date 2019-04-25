@@ -2,15 +2,15 @@
 <view>
   <view class='top-wrapper'>
     <view wx:if='{{collectList.length}}' class='collect-text'>收藏的影评</view>
-    <view wx:for='{{collectList}}' wx:key='review' class='movie-card' data-index='{{index}}' s bindtap='goDetail'>
-      <image src='{{item.image}}' class='movie-image'></image>
-      <view class='movie-text-wrapper'>
-        <view class='movie-title'>{{ item.title }}</view>
-        <text class='review-content'>{{ item.content }}</text>
+    <view wx:for='{{collectList}}' wx:key='review' class='collect-card' data-index='{{index}}' s bindtap='goDetail'>
+      <image src='{{item.image}}' class='collect-image'></image>
+      <view class='collect-text-wrapper'>
+        <view class='collect-title'>{{ item.title }}</view>
+        <text class='review-content content'>{{ item.content }}</text>
       </view>
-      <view class='movie-rec'>
-        <image src='{{ item.avatar }}' class='rec-avator'></image>
-        <view class='rec-text'>{{ item.username }}</view>
+      <view class='collect-rec'>
+        <image src='{{ item.avatar }}' class='hot-avatar'></image>
+        <view class='hot-username'>{{ item.username }}</view>
       </view>
     </view>
   </view>

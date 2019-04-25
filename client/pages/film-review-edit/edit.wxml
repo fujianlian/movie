@@ -1,7 +1,7 @@
 <!--pages/film-review/edit.wxml-->
 <view>
   <image class='movie-image' src='{{ image }}'></image>
-  <view class='movie-wrapper'>
+  <view class='movie-wrapper wrapper'>
     <view class='movie-title'>{{ title }}</view>
     <textarea class='edit-ipt' placeholder-class='edit-placeholder' placeholder='输入您的影评内容...' auto-focus maxlength='255' bindinput='onInput'></textarea>
   </view>

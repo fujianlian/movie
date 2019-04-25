@@ -82,7 +82,8 @@ Page({
     let index = event.currentTarget.dataset.index
     let review = JSON.stringify(this.data.reviewList[index])
     wx.navigateTo({
-      url: `/pages/film-review-detail/detail?review=${review}&showCollect=${true}`,
+      url: `/pages/film-review-detail/detail?review=${review}`,
     })
-  }
+  },
+
 })

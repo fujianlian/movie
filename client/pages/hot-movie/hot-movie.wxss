@@ -1,6 +1,6 @@
 /* pages/hot-movie/hot-movie.wxss */
 
-.movie-card {
+.hot-card {
   display: flex;
   align-items: center;
   height: 300rpx;
@@ -9,16 +9,16 @@
   border: solid 1rpx #eaeef1;
 }
 
-.movie-card:last-child {
+.hot-card:last-child {
   margin-bottom: 30rpx;
 }
 
-.movie-image {
+.hot-image {
   width: 203rpx;
   height: 300rpx;
 }
 
-.movie-text-wrapper {
+.hot-text-wrapper {
   margin-left: 40rpx;
   display: flex;
   flex-flow: column;
@@ -32,7 +32,7 @@
   font-weight: 600;
 }
 
-.movie-category {
+.hot-category {
   font-size: 26rpx;
   line-height: 36rpx;
   color: #666;
