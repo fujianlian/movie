@@ -28,7 +28,7 @@
   font-size: 36rpx;
   line-height: 50rpx;
   color: #333;
-  font-weight: 70;
+  font-weight: 400;
 }
 
 .movie-rec {

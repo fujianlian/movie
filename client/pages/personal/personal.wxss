@@ -48,11 +48,27 @@
   font-weight: 600;
 }
 
+/*
+设置文本最大行数：
+display: -webkit-box;
+overflow: hidden;
+text-overflow: ellipsis;
+word-break: break-all;
+-webkit-box-orient: vertical;
+-webkit-line-clamp: 2;
+*/
+
 .review-content {
   font-size: 26rpx;
   line-height: 36rpx;
   color: #666;
   margin-top: 20rpx;
+  display: -webkit-box;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  word-break: break-all;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 2;
 }
 
 .movie-rec {

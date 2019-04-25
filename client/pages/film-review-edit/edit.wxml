@@ -5,5 +5,5 @@
     <view class='movie-title'>{{ title }}</view>
     <textarea class='edit-ipt' placeholder-class='edit-placeholder' placeholder='输入您的影评内容...' auto-focus maxlength='255' bindinput='onInput'></textarea>
   </view>
-  <button class='bottom' type='primary'>完成</button>
+  <button class='bottom' type='primary' bindtap='addReview'>完成</button>
 </view>

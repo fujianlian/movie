@@ -8,7 +8,14 @@
       <view class='rec-text'>{{ review.username }}</view>
     </view>
     <view class='review-content'>{{ review.content }}</view>
-    <view class='button-wrapper-two' wx:if='{{!onlyShow}}'>
+    <view class='button-wrapper-three' wx:if='{{showCollect}}'>
+      <view class='button'>
+        <view class='button-text' bindtap='collectReview'>
+          收藏影评
+        </view>
+      </view>
+    </view>
+    <view class='button-wrapper-two' wx:elif='{{!onlyShow}}'>
       <view class='button'>
         <view class='button-text' bindtap='collectReview'>
           收藏影评

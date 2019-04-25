@@ -37,6 +37,9 @@ var config = {
 
     // 电影影评列表
     reviewList: `${host}/weapp/reviewList`,
+
+    // 发布影评
+    addrReview: `${host}/weapp/review`,
     
   }
 };

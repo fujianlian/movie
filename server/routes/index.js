@@ -43,6 +43,9 @@ router.get('/review', controllers.review.random)
 // 电影影评列表
 router.get('/reviewList', controllers.review.list)
 
+// 发布影评
+router.post('/review', validationMiddleware, controllers.review.add)
+
 // 电影列表
 router.get('/movie', controllers.movie.list)
 

@@ -5,8 +5,8 @@
     <view class='movie-title'>{{ movie.title }}</view>
     <view class='movie-desc'>{{ movie.description }}</view>
     <view class='button-wrapper'>
-      <view class='button'>
-        <view class='button-text' bindtap='lookReview'>
+      <view class='button' bindtap='lookReview'>
+        <view class='button-text'>
           查看影评
         </view>
       </view>

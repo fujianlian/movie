@@ -95,7 +95,9 @@ Page({
   },
 
   goReview(event) {
-    let review = JSON.stringify(this.data.movie)
+    let review = this.data.movie
+    review.description = ''
+    review = JSON.stringify(review)
     wx.navigateTo({
       url: `/pages/film-review-detail/detail?review=${review}`,
     })

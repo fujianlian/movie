@@ -10,7 +10,9 @@ Page({
   data: {
     review: {},
     // 是否只显示影评内容
-    onlyShow: false
+    onlyShow: false,
+    // 底部只显示收藏影评
+    showCollect: false
   },
 
   /**
@@ -21,10 +23,13 @@ Page({
     review = JSON.parse(options.review)
     let onlyShow = this.data.onlyShow
     onlyShow = options.onlyShow === undefined ? false : options.onlyShow
+    let showCollect = this.data.showCollect
+    showCollect = options.showCollect === undefined ? false : options.showCollect
     review.username = review.username + '的影评'
     this.setData({
       review,
-      onlyShow
+      onlyShow,
+      showCollect
     })
   },
 
