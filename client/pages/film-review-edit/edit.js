@@ -11,6 +11,7 @@ Page({
     image: "",
     title: "",
     id: 0,
+    type: "",
     content: ""
   },
 
@@ -21,10 +22,12 @@ Page({
     let title = options.title
     let image = options.image
     let id = options.id
+    let type = options.type
     this.setData({
       image: image,
       title: title,
-      id: id
+      id: id,
+      type: type
     })
   },
 
@@ -36,46 +39,17 @@ Page({
 
   // 发布影评
   addReview() {
-    let content = this.data.content;
-    if (!content) return
-
-    wx.showLoading({
-      title: '正在发布影评...',
-    })
-
-    let id = this.data.id
-
-    qcloud.request({
-      url: config.service.addrReview,
-      method: 'POST',
-      login: true,
-      data: {
-        id: id,
-        content: content
-      },
-      success: result => {
-        wx.hideLoading();
-        let data = result.data;
-        if (!data.code) {
-          wx.showToast({
-            icon: 'none',
-            title: '发布成功'
-          })
-        } else {
-          wx.showToast({
-            icon: 'none',
-            title: '发布失败'
-          })
-        }
-      },
-      fail: (err) => {
-        console.log(err)
-        wx.hideLoading();
-        wx.showToast({
-          icon: 'none',
-          title: '发布失败'
+    let type = this.data.type
+    if (this.data.type === 'text') {
+      let content = this.data.content
+      let id = this.data.id
+      let image = this.data.image
+      let title = this.data.title
+      if (content) {
+        wx.navigateTo({
+          url: `/pages/film-review-preview/preview?id=${id}&image=${image}&content=${content}&title=${title}&type=${type}`,
         })
       }
-    })
-  },
+    }
+  }
 })

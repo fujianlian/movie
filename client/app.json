@@ -15,5 +15,6 @@
     "navigationBarBackgroundColor": "#fff",
     "navigationBarTitleText": "侃影评",
     "navigationBarTextStyle": "black"
-  }
+  },
+  "sitemapLocation": "sitemap.json"
 }

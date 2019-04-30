@@ -1,4 +1,5 @@
 /**app.wxss**/
+@import '/icon/iconfont.wxss';
 
 .container {
   display: flex;
@@ -58,9 +59,9 @@ page {
 }
 
 .button-text {
-  font-size: 24rpx;
-  line-height: 34rpx;
+  font-size: 30rpx;
   color: #acbcca;
+  margin-left: 15rpx;
 }
 
 .hot-avatar {

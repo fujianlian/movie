@@ -77,7 +77,7 @@ Page({
       let title = this.data.movie.title
       let image = this.data.movie.image
       wx.navigateTo({
-        url: `/pages/film-review-edit/edit?id=${id}&title=${title}&image=${image}`,
+        url: `/pages/film-review-edit/edit?id=${id}&title=${title}&image=${image}&type=${type}`,
       })
     }
   },

@@ -9,11 +9,21 @@
     </view>
   </view>
   <view class='bottom-wrapper'>
-    <view class='bottom-text' bindtap='goHot'>热门</view>
-    <view wx:if="{{!userInfo}}" class="bottom-text">
+    <view class='bottom-btn' bindtap='goHot'>
+      <text class='iconfont iconzan:before' style='font-size:44rpx;color: #acbcca'></text>
+      <view class='btn-text'>热门</view>
+    </view>
+    <view wx:if="{{!userInfo}}" class="login-btn">
+      <view class='login-img-btn'>
+        <text class='iconfont iconme-:before' style='font-size:44rpx;color: #acbcca'></text>
+        <view class='login-img-text'>我的</view>
+      </view>
       <button wx:if="{{locationAuthType===0}}" class="login-text" open-type='getUserInfo' bindgetuserinfo='onTapLogin'>我的</button>
       <button wx:if="{{locationAuthType===1}}" class="login-text" open-type='openSetting' bindopensetting="onTapLogin">我的</button>
     </view>
-    <view wx:else class='bottom-text' bindtap='goPersonal'>我的</view>
+    <view wx:else class='bottom-btn' bindtap='goPersonal'>
+      <text class='iconfont iconme-:before' style='font-size:46rpx;color: #acbcca'></text>
+      <view class='btn-text '>我的</view>
+    </view>
   </view>
 </view>

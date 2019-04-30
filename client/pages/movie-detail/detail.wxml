@@ -6,14 +6,12 @@
     <view class='movie-desc'>{{ movie.description }}</view>
     <view class='button-wrapper'>
       <view class='button' bindtap='lookReview'>
-        <view class='button-text'>
-          查看影评
-        </view>
+        <text class='iconfont iconchakan:before' style='font-size:40rpx;color: #acbcca;margin-top:4rpx'></text>
+        <view class='button-text'>查看影评</view>
       </view>
       <view class='button' bindtap="popWindow" data-statu="open">
-        <view class='button-text'>
-          添加影评
-        </view>
+        <text class='iconfont iconedit:before' style='font-size:36rpx;color: #acbcca'></text>
+        <view class='button-text'>添加影评</view>
       </view>
     </view>
   </view>
@@ -25,7 +23,7 @@
     <!--drawer content-->
     <view class="pop_content">
       <view class="pop_title line" bindtap="popWindow" data-type="text" data-statu="close">文字</view>
-      <view class="pop_title" bindtap="popWindow" data-statu="close" data-type="video">音频</view>
+      <view class="pop_title" bindtap="popWindow" data-statu="close" data-type="audio">音频</view>
       <view class="line2"></view>
       <view class="pop_title" bindtap="popWindow" data-statu="close">取消</view>
     </view>

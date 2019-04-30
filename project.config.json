@@ -13,5 +13,7 @@
 	},
 	"appid": "wx168c62fb8d672fc7",
 	"projectname": "movie",
+	"simulatorType": "wechat",
+	"simulatorPluginLibVersion": {},
 	"condition": {}
 }
