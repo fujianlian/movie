@@ -38,5 +38,5 @@
 
 .audio-margin {
   position: fixed;
-  bottom: 280rpx;
+  bottom: 250rpx;
 }

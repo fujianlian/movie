@@ -24,8 +24,13 @@ module.exports = {
     let avatar = ctx.state.$wxInfo.userinfo.avatarUrl
     let movie_id = ctx.request.body.id
     let content = ctx.request.body.content
-
-    await DB.query('INSERT INTO review(user, username, avatar, content, movie_id) VALUES (?, ?, ?, ?, ?)', [user, username, avatar, content, movie_id])
+    let audio = ctx.request.body.audio
+    if (content != null) {
+      await DB.query('INSERT INTO review(user, username, avatar, content, movie_id) VALUES (?, ?, ?, ?, ?)', [user, username, avatar, content, movie_id])
+    }
+    if (audio != null) {
+      await DB.query('INSERT INTO review(user, username, avatar, audio, movie_id) VALUES (?, ?, ?, ?, ?)', [user, username, avatar, audio, movie_id])
+    }
     ctx.state.data = {}
   }
 }

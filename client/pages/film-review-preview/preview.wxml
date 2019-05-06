@@ -9,7 +9,12 @@
     </view>
     <view class='movie-rec mark'>
       <text class='iconfont iconyinhao:before mark-img'></text>
-      <view class='content'>{{content}}</view>
+      <view wx:if='{{type==="text"}}' class='content'>{{content}}</view>
+      <view wx:else class='audio' bindtap='playAndStop'>
+        <text wx:if='{{isPlay}}' class='iconfont iconzanting:before' style='font-size:50rpx'></text>
+        <text wx:else class='iconfont iconbofang:before' style='font-size:50rpx'></text>
+        <text class='audio-time'>{{text}}</text>
+      </view>
     </view>
     <view class='button-wrapper-two' wx:if='{{!onlyShow}}'>
       <view class='button' bindtap='back'>

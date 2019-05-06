@@ -5,10 +5,10 @@
     <view class='movie-title'>{{ title }}</view>
     <textarea wx:if='{{type==="text"}}' textarea class='edit-ipt' placeholder-class='edit-placeholder' placeholder='输入您的影评内容...' auto-focus maxlength='255' bindinput='onInput'>
     </textarea>
-    <view class='button-wrapper audio-margin' wx:if='{{type==="audio"}}' >
-      <view class='button' bindtap='lookReview'>
+    <view class='button-wrapper audio-margin' wx:if='{{type==="audio"}}'>
+      <view class='button' bindlongtap="longTap" bindtouchstart="touchStart" bindtouchmove='touchMove' bindtouchend="touchEnd">
         <text class='iconfont iconrecord_after:before' style='font-size:38rpx;color: #acbcca;margin-top:4rpx'></text>
-        <view class='button-text'>录音</view>
+        <view class='button-text'>{{text}}</view>
       </view>
     </view>
   </view>

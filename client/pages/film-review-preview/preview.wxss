@@ -69,3 +69,22 @@
   margin-right: 55rpx;
   opacity: 0.8;
 }
+
+.audio {
+  display: flex;
+  align-items: center;
+  margin-left: 47rpx;
+  margin-top: 10rpx;
+  padding-left: 40rpx;
+  width: 300rpx;
+  height: 70rpx;
+  background-color: #d6dee5;
+  border: solid 0.5rpx #bdcad6;
+  border-radius: 8rpx;
+  opacity: 0.9;
+}
+
+.audio-time {
+  margin-left: 10rpx;
+  font-size: 30rpx;
+}
