@@ -3,3 +3,21 @@
 .content {
   margin: 30rpx 40rpx 0 151rpx
 }
+
+.audio {
+  display: flex;
+  align-items: center;
+  margin-top: 30rpx;
+  padding-left: 40rpx;
+  width: 300rpx;
+  height: 70rpx;
+  background-color: #d6dee5;
+  border: solid 0.5rpx #bdcad6;
+  border-radius: 8rpx;
+  opacity: 0.9;
+}
+
+.audio-time {
+  margin-left: 10rpx;
+  font-size: 30rpx;
+}

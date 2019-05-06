@@ -1,6 +1,7 @@
 // pages/film-review-detail/detail.js
 var qcloud = require('../../vendor/wafer2-client-sdk/index')
 var config = require('../../config')
+const innerAudioContext = wx.createInnerAudioContext()
 
 Page({
 
@@ -10,7 +11,12 @@ Page({
   data: {
     review: {},
     // 是否只显示影评内容
-    onlyShow: false
+    onlyShow: false,
+    // 是否只显示收藏按钮
+    onlyCollect: false,
+
+    text: "",
+    isPlay: false,
   },
 
   /**
@@ -21,11 +27,17 @@ Page({
     review = JSON.parse(options.review)
     let onlyShow = this.data.onlyShow
     onlyShow = options.onlyShow === undefined ? false : options.onlyShow
-
+    let onlyCollect = this.data.onlyCollect
+    onlyCollect = options.onlyCollect === undefined ? false : options.onlyCollect
+    let text = this.data.text
+    text = review.second + 's'
     review.username = review.username + '的影评'
+    innerAudioContext.src = review.audio
     this.setData({
       review,
-      onlyShow
+      onlyShow,
+      onlyCollect,
+      text
     })
   },
 
@@ -87,7 +99,7 @@ Page({
   },
 
 
-  popWindow: function (event) {
+  popWindow: function(event) {
     let currentStatu = event.currentTarget.dataset.statu;
     let type = event.currentTarget.dataset.type;
     if (type !== undefined)
@@ -96,7 +108,7 @@ Page({
       this.pop(currentStatu)
   },
 
-  pop: function (currentStatu, type) {
+  pop: function(currentStatu, type) {
     /* 动画部分 */
     // 第1步：创建动画实例 
     var animation = wx.createAnimation({
@@ -117,7 +129,7 @@ Page({
     });
 
     // 第5步：设置定时器到指定时候后，执行第二组动画
-    setTimeout(function () {
+    setTimeout(function() {
       // 执行第二组动画：Y轴不偏移，停
       animation.translateY(0).step()
       // 给数据对象储存的第一组动画，更替为执行完第二组动画的动画对象
@@ -142,6 +154,44 @@ Page({
 
     if (type) {
       this.editReview(type)
+    }
+  },
+
+
+  // 播放声音/停止播放
+  playAndStop() {
+    console.log(this.data.review.audio)
+    console.log("sdkfn")
+    let that = this
+    innerAudioContext.onError((res) => {
+      console.log(res.errMsg)
+      console.log(res.errCode)
+    })
+    innerAudioContext.onEnded((res) => {
+      that.setData({
+        text: `${this.data.review.second}s`,
+        isPlay: false
+      })
+    })
+    if (!innerAudioContext.paused) {
+      console.log("paused")
+      innerAudioContext.onPause(() => {
+        that.setData({
+          text: `${this.data.review.second}s`,
+          isPlay: false
+        })
+      })
+    } else {
+      console.log("sdkfn")
+      innerAudioContext.autoplay = true
+      innerAudioContext.play()
+      innerAudioContext.onPlay(() => {
+        console.log("sdkfn")
+        that.setData({
+          text: '正在播放',
+          isPlay: true
+        })
+      })
     }
   },
 })

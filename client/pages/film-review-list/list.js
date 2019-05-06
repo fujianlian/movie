@@ -9,7 +9,10 @@ Page({
    */
   data: {
     id: 0,
-    reviewList: []
+    reviewList: [],
+    time: 0,
+    text: "",
+    isPlay: false,
   },
 
   /**
@@ -39,7 +42,7 @@ Page({
   },
 
   /**
-   * 获取收藏影评列表
+   * 获取影评列表
    */
   getList(isFirst, callback) {
     let self = this
@@ -82,7 +85,7 @@ Page({
     let index = event.currentTarget.dataset.index
     let review = JSON.stringify(this.data.reviewList[index])
     wx.navigateTo({
-      url: `/pages/film-review-detail/detail?review=${review}`,
+      url: `/pages/film-review-detail/detail?review=${review}&onlyCollect=${true}`,
     })
   },
 

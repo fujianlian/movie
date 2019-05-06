@@ -132,6 +132,7 @@ Page({
     let that = this
     let id = this.data.id
     let filePath = this.data.audio
+    let second = Math.round(innerAudioContext.duration) === 0 ? 1 : Math.round
     wx.showLoading({
       title: '正在发布影评...',
     })
@@ -148,7 +149,8 @@ Page({
         console.log(res.data)
         let data = {
           id: id,
-          audio: res.data.imgUrl
+          audio: res.data.imgUrl,
+          second: second
         }
         that.uploadPreview(data)
       },

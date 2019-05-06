@@ -34,7 +34,7 @@ page {
 
 .button-wrapper {
   display: flex;
-  justify-content: space-between
+  justify-content: space-between;
 }
 
 .button-wrapper-two {
@@ -43,7 +43,14 @@ page {
   left: 90rpx;
   right: 90rpx;
   display: flex;
-  justify-content: space-between
+  justify-content: space-between;
+}
+
+.button-wrapper-three {
+  position: fixed;
+  bottom: 60rpx;
+  display: flex;
+  justify-content: space-between;
 }
 
 .button {

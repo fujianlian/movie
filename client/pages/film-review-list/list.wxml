@@ -6,7 +6,11 @@
         <image src='{{ item.avatar }}' class='hot-avatar'></image>
         <view class='hot-username'>{{ item.username }}</view>
       </view>
-      <view class='review-content content'>{{ item.content }}</view>
+      <view wx:if='{{item.content}}' class='review-content content'>{{ item.content }}</view>
+      <view wx:if='{{item.audio}}' class='audio'>
+        <text class='iconfont iconbofang:before' style='font-size:50rpx'></text>
+        <text class='audio-time'>{{item.second}}s</text>
+      </view>
     </view>
   </view>
   <view class='bottom-wrapper'>
