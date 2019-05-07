@@ -58,6 +58,14 @@ word-break: break-all;
 -webkit-line-clamp: 2;
 */
 
+.collect-rec {
+  position: absolute;
+  display: flex;
+  left: 253rpx;
+  bottom: 30rpx;
+  align-items: center;
+}
+
 .content {
   margin-top: 20rpx;
   display: -webkit-box;
@@ -68,10 +76,20 @@ word-break: break-all;
   -webkit-line-clamp: 2;
 }
 
-.collect-rec {
-  position: absolute;
+.audio {
   display: flex;
-  left: 253rpx;
-  bottom: 30rpx;
-  align-items: center
+  align-items: center;
+  margin-top: 25rpx;
+  padding-left: 36rpx;
+  width: 226rpx;
+  height: 60rpx;
+  background-color: #d6dee5;
+  border: solid 0.5rpx #bdcad6;
+  border-radius: 8rpx;
+  opacity: 0.9;
+}
+
+.audio-time {
+  margin-left: 10rpx;
+  font-size: 30rpx;
 }

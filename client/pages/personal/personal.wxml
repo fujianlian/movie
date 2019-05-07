@@ -6,7 +6,11 @@
       <image src='{{item.image}}' class='collect-image'></image>
       <view class='collect-text-wrapper'>
         <view class='collect-title'>{{ item.title }}</view>
-        <text class='review-content content'>{{ item.content }}</text>
+        <text wx:if='{{item.content}}' class='review-content content'>{{ item.content }}</text>
+        <view wx:if='{{item.audio}}' class='audio'>
+          <text class='iconfont iconbofang:before' style='font-size:44rpx'></text>
+          <text class='audio-time'>{{item.second}}s</text>
+        </view>
       </view>
       <view class='collect-rec'>
         <image src='{{ item.avatar }}' class='hot-avatar'></image>

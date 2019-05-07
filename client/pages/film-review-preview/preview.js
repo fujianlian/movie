@@ -181,7 +181,7 @@ Page({
       })
     })
     if (!innerAudioContext.paused) {
-      console.log("paused")
+      innerAudioContext.pause()
       innerAudioContext.onPause(() => {
         that.setData({
           text: `${this.data.time}s`,

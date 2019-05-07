@@ -160,8 +160,7 @@ Page({
 
   // 播放声音/停止播放
   playAndStop() {
-    console.log(this.data.review.audio)
-    console.log("sdkfn")
+
     let that = this
     innerAudioContext.onError((res) => {
       console.log(res.errMsg)
@@ -173,8 +172,9 @@ Page({
         isPlay: false
       })
     })
+   
     if (!innerAudioContext.paused) {
-      console.log("paused")
+      innerAudioContext.pause()
       innerAudioContext.onPause(() => {
         that.setData({
           text: `${this.data.review.second}s`,
@@ -182,11 +182,10 @@ Page({
         })
       })
     } else {
-      console.log("sdkfn")
-      innerAudioContext.autoplay = true
+      innerAudioContext.autoplay = true;
       innerAudioContext.play()
+      
       innerAudioContext.onPlay(() => {
-        console.log("sdkfn")
         that.setData({
           text: '正在播放',
           isPlay: true

@@ -38,9 +38,9 @@
   align-items: center;
   margin-top: 30rpx;
   margin-left: 20rpx;
-  padding-left: 40rpx;
-  width: 300rpx;
-  height: 70rpx;
+  padding-left: 36rpx;
+  width: 226rpx;
+  height: 60rpx;
   background-color: #d6dee5;
   border: solid 0.5rpx #bdcad6;
   border-radius: 8rpx;
