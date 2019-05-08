@@ -3,6 +3,7 @@ var qcloud = require('../../vendor/wafer2-client-sdk/index')
 var config = require('../../config')
 const recorderManager = wx.getRecorderManager()
 var tempFilePath
+var time
 
 Page({
 
@@ -17,9 +18,7 @@ Page({
     content: "",
     text: "长按录音",
     // 记录长按录音开始点信息,用于后面计算滑动距离。
-    startPoint: {},
-    // 发送锁，当为true时上锁，false时解锁发送
-    sendLock: true,
+    startPoint: {}
   },
 
   /**
@@ -36,6 +35,8 @@ Page({
       id: id,
       type: type
     })
+
+    recorderManager.onStop(this.onVoiceStop);
   },
 
   onInput(event) {
@@ -46,95 +47,71 @@ Page({
 
   // 发布影评
   addReview() {
+    console.log("===dfgv v ")
     let type = this.data.type
     let id = this.data.id
     let image = this.data.image
     let title = this.data.title
+    console.log("=== ",type)
+
     if (this.data.type === 'text') {
       let content = this.data.content;
       if (content) {
         wx.navigateTo({
-          url: `/pages/film-review-preview/preview?id=${id}&image=${image}&content=${content}&title=${title}&type=${type}`,
+          url: `/pages/film-review-preview/preview?id=${id}&image=${image}&content=${content}&title=${title}&type=${type}`
         })
       }
     } else {
-      let tempFilePath = this.tempFilePath
+      console.log(tempFilePath)
+      console.log(time)
       if (tempFilePath) {
         tempFilePath = tempFilePath.replace("=", "x-y")
         wx.navigateTo({
-          url: `/pages/film-review-preview/preview?id=${id}&image=${image}&title=${title}&type=${type}&audio=${tempFilePath}`,
+          url: `/pages/film-review-preview/preview?id=${id}&image=${image}&title=${title}&type=${type}&audio=${tempFilePath}&time=${time}`,
         })
       }
     }
   },
 
-  //开始录音的时候
-  start: function() {
-    const options = {
-      duration: 10000, //指定录音的时长，单位 ms
-      sampleRate: 16000, //采样率
-      numberOfChannels: 1, //录音通道数
-      encodeBitRate: 96000, //编码码率
-      format: 'mp3', //音频格式，有效值 aac/mp3
-      frameSize: 50, //指定帧大小，单位 KB
-    }
-    //开始录音
-    recorderManager.start(options);
-    recorderManager.onStart(() => {
-      console.log('recorder start')
-    });
-    //错误回调
-    recorderManager.onError((res) => {
-      console.log(res);
+  voiceStartRecord() {
+    console.log('start record');
+    recorderManager.start({
+      // 最大长度设置为 2 分钟
+      duration: 2 * 60 * 1000,
+      // 格式
+      format: 'mp3',
+      sampleRate: 16000,
+      encodeBitRate: 25600,
+      frameSize: 9,
+      numberOfChannels: 1
     })
   },
 
-  //停止录音
-  stop: function() {
-    recorderManager.stop();
-    recorderManager.onStop((res) => {
-      if (!this.data.sendLock) {
-        this.tempFilePath = res.tempFilePath
-        console.log('停止录音', res.tempFilePath)
-        const {
-          tempFilePath
-        } = res
-        this.addReview()
-      }
-    })
-
+  voiceEndRecord() {
+    console.log('stop record')
+    recorderManager.stop()
   },
 
-  longTap: function() {
-    console.log('longTap....')
-  },
-
-  touchStart(e) {
-    console.log('touchStart....')
-    this.setData({
-      startPoint: e.touches[0],
-      text: "松开保存",
-      sendLock: false
-    })
-    this.start(); //开始录音
-    wx.showToast({
-      title: "正在录音，上划取消保存",
-      icon: "none",
-      duration: 60000 //先定义个60秒，后面可以手动调用wx.hideToast()隐藏
-    });
-  },
-
-
-  touchEnd: function() {
-    console.log('touchEnd....')
+  onVoiceStop(voiceInfo) {
+    tempFilePath = voiceInfo.tempFilePath
+    let duration = voiceInfo.duration
     this.setData({
       text: "长按录音",
     })
     //结束录音、隐藏Toast提示框
-    wx.hideToast();
-    this.stop()
-  },
+    wx.hideToast()
+    // 不允许小于 1 秒
+    if (duration < 1000) {
+      util.showTips('录音过短');
+      return;
+    }
 
+    time = duration/1000
+
+    console.log("===dfgv v ")
+    this.addReview()
+  },
+  
   touchMove(e) {
     //touchmove时触发
     var moveLenght = e.touches[e.touches.length - 1].clientY - this.data.startPoint.clientY; //移动距离
@@ -142,20 +119,14 @@ Page({
       wx.showToast({
         title: "松开手指，取消保存",
         icon: "none",
-        duration: 60000
-      });
-      this.setData({
-        sendLock: true
+        duration: 60000,
       })
     } else {
       wx.showToast({
         title: "正在录音，上划取消保存",
         icon: "none",
-        duration: 60000
-      });
-      this.setData({
-        sendLock: false
+        duration: 60000,
       })
     }
-  },
+  }
 })

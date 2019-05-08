@@ -2,6 +2,7 @@
 var qcloud = require('../../vendor/wafer2-client-sdk/index')
 var config = require('../../config')
 
+const util = require('../../utils/util');
 const innerAudioContext = wx.createInnerAudioContext()
 
 Page({
@@ -17,7 +18,7 @@ Page({
     id: 0,
     type: "",
     time: 0,
-    text: "",
+    text: '',
     isPlay: false,
     isUpload: false
   },
@@ -32,6 +33,9 @@ Page({
     let type = options.type
     let content = type === 'text' ? options.content : ""
     let audio = type === 'audio' ? options.audio.replace("x-y", "=") : ""
+    let time = type === 'audio' ? Math.round(options.time) : 0
+    let text = time + 's'
+
     let that = this
     this.setData({
       image: image,
@@ -39,20 +43,12 @@ Page({
       id: id,
       type: type,
       content: content,
-      audio: audio
+      audio: audio,
+      time: time,
+      text: text
     })
     if (type === 'audio') {
-      innerAudioContext.src = audio
-      innerAudioContext.onCanplay(() => {
-        setTimeout(function() {
-          console.log(innerAudioContext.duration)
-          let time = Math.round(innerAudioContext.duration) === 0 ? 1 : Math.round(innerAudioContext.duration)
-          that.setData({
-            time: time,
-            text: `${time}s`
-          })
-        }, 200)  //这里设置延时1秒获取
-      })
+      innerAudioContext.src = audio;
     }
   },
 
