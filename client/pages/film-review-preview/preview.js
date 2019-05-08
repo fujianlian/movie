@@ -77,6 +77,7 @@ Page({
   // 上传影评
   uploadPreview(data) {
     let id = this.data.id
+    let that = this
     qcloud.request({
       url: config.service.addrReview,
       method: 'POST',
@@ -128,7 +129,7 @@ Page({
     let that = this
     let id = this.data.id
     let filePath = this.data.audio
-    let second = Math.round(innerAudioContext.duration) === 0 ? 1 : Math.round
+    let second = this.data.time
     wx.showLoading({
       title: '正在发布影评...',
     })

@@ -47,13 +47,12 @@ Page({
 
   // 发布影评
   addReview() {
-    console.log("===dfgv v ")
+
     let type = this.data.type
     let id = this.data.id
     let image = this.data.image
     let title = this.data.title
-    console.log("=== ",type)
-
+    
     if (this.data.type === 'text') {
       let content = this.data.content;
       if (content) {
@@ -62,8 +61,6 @@ Page({
         })
       }
     } else {
-      console.log(tempFilePath)
-      console.log(time)
       if (tempFilePath) {
         tempFilePath = tempFilePath.replace("=", "x-y")
         wx.navigateTo({
@@ -102,13 +99,13 @@ Page({
     wx.hideToast()
     // 不允许小于 1 秒
     if (duration < 1000) {
-      util.showTips('录音过短');
+      wx.showToast({
+        title: "录音过短",
+        icon: "none"
+      })
       return;
     }
-
-    time = duration/1000
-
-    console.log("===dfgv v ")
+    time = duration/1000;
     this.addReview()
   },
   
