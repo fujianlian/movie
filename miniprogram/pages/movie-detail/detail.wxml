@@ -1,2 +1,18 @@
 <!--pages/movie-detail/detail.wxml-->
-<text>pages/movie-detail/detail.wxml</text>
+<view class='detail-wrapper'>
+  <image src='{{movie.image}}' class='movie-image'></image>
+  <view class='movie-card-wrapper'>
+    <view class='movie-title'>{{ movie.title }}</view>
+    <view class='movie-desc'>{{ movie.description }}</view>
+    <view class='button-wrapper'>
+      <view class='button' bindtap='lookReview'>
+        <text class='iconfont iconchakan:before' style='font-size:40rpx;color: #acbcca;margin-top:4rpx'></text>
+        <view class='button-text'>查看影评</view>
+      </view>
+      <view class='button' bindtap="showEditActions" data-statu="open">
+        <text class='iconfont iconedit:before' style='font-size:36rpx;color: #acbcca'></text>
+        <view class='button-text'>添加影评</view>
+      </view>
+    </view>
+  </view>
+</view>

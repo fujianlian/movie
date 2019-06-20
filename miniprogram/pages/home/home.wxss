@@ -1,1 +1,82 @@
 /* pages/home/home.wxss */
+
+.hot-wrapper {
+  display: flex;
+  flex-flow: column;
+  margin-top: 60rpx;
+  align-items: center;
+}
+
+.hot-image {
+  width: 500rpx;
+  height: 740rpx;
+}
+
+.hot-title {
+  margin-top: 40rpx;
+  font-size: 36rpx;
+  line-height: 50rpx;
+  color: #333;
+  font-weight: 600;
+}
+
+.hot-rec {
+  display: flex;
+  margin-top: 20rpx;
+  align-items: center;
+}
+
+.bottom-btn {
+  width: 50vw;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.btn-text {
+  font-size: 30rpx;
+  color: #acbcca;
+  margin-left: 10rpx;
+}
+
+.login-text {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  padding-left: 86rpx;
+  padding-top: 2rpx;
+  font-size: 30rpx;
+  line-height: 100rpx;
+  color: #acbcca;
+  background-color: transparent;
+  z-index: 99;
+}
+
+.login-text::after {
+  border: none;
+}
+
+.login-btn {
+  width: 50vw;
+  height: 100rpx;
+  position: relative;
+}
+
+.login-img-btn {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.login-img-text {
+  font-size: 30rpx;
+  margin-left: 10rpx;
+  color: transparent;
+}

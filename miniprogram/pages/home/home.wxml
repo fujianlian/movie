@@ -1,2 +1,29 @@
 <!--pages/home/home.wxml-->
-<text>pages/home/home.wxml</text>
+<view>
+  <view class='hot-wrapper'>
+    <image src='{{movie.image}}' class='hot-image' bindtap='goDetail'></image>
+    <view class='hot-title'>{{ movie.title }}</view>
+    <view class='hot-rec' bindtap='goReview'>
+      <image src='{{ movie.avatar }}' class='hot-avatar'></image>
+      <view class='hot-username'>{{ movie.username }}</view>
+    </view>
+  </view>
+  <view class='bottom-wrapper'>
+    <view class='bottom-btn' bindtap='goHot'>
+      <text class='iconfont iconzan:before' style='font-size:44rpx;color: #acbcca'></text>
+      <view class='btn-text'>热门</view>
+    </view>
+    <view wx:if="{{!userInfo}}" class="login-btn">
+      <view class='login-img-btn'>
+        <text class='iconfont iconme-:before' style='font-size:44rpx;color: #acbcca'></text>
+        <view class='login-img-text'>我的</view>
+      </view>
+      <button wx:if="{{locationAuthType===0}}" class="login-text" open-type='getUserInfo' bindgetuserinfo='onTapLogin'>我的</button>
+      <button wx:if="{{locationAuthType===1}}" class="login-text" open-type='openSetting' bindopensetting="onTapLogin">我的</button>
+    </view>
+    <view wx:else class='bottom-btn' bindtap='goPersonal'>
+      <text class='iconfont iconme-:before' style='font-size:46rpx;color: #acbcca'></text>
+      <view class='btn-text '>我的</view>
+    </view>
+  </view>
+</view>

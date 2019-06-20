@@ -1,1 +1,22 @@
 /* pages/movie-detail/detail.wxss */
+
+.movie-card-wrapper {
+  position: absolute;
+  top: 60rpx;
+  left: 50rpx;
+  right: 50rpx;
+  margin-bottom: 50rpx;
+  display: flex;
+  flex-flow: column;
+  align-items: center;
+  background: white;
+  border: solid 1rpx #eaeef1;
+  border-radius: 10rpx
+}
+
+.movie-desc {
+  font-size: 26rpx;
+  line-height: 40rpx;
+  color: #666;
+  margin: 20rpx 60rpx
+}
