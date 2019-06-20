@@ -1,6 +1,7 @@
 // pages/home/home.js
 
 const db = require('../../utils/db.js')
+const util = require('../../utils/util')
 
 Page({
 
@@ -21,19 +22,27 @@ Page({
     this.getRondom()
   },
 
-  /**
-   * 生命周期函数--监听页面显示
-   */
-  onShow: function() {
-    // 同步授权状态
+  onShow() {
+    util.getUserInfo().then(userInfo => {
+      this.setData({
+        userInfo
+      })
+    }).catch(err => {
+      console.log('尚未通过身份验证');
+    })
+  },
 
+  onTapLogin(event) {
+    this.setData({
+      userInfo: event.detail.userInfo
+    })
   },
 
   /**
    * 随机获取热门电影
    */
   getRondom() {
-  
+
     wx.showLoading({
       title: '正在加载中...',
     })

@@ -18,8 +18,7 @@
         <text class='iconfont iconme-:before' style='font-size:44rpx;color: #acbcca'></text>
         <view class='login-img-text'>我的</view>
       </view>
-      <button wx:if="{{locationAuthType===0}}" class="login-text" open-type='getUserInfo' bindgetuserinfo='onTapLogin'>我的</button>
-      <button wx:if="{{locationAuthType===1}}" class="login-text" open-type='openSetting' bindopensetting="onTapLogin">我的</button>
+      <button class="login-text" open-type='getUserInfo' bindgetuserinfo='onTapLogin'>我的</button>
     </view>
     <view wx:else class='bottom-btn' bindtap='goPersonal'>
       <text class='iconfont iconme-:before' style='font-size:46rpx;color: #acbcca'></text>
