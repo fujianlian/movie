@@ -31,7 +31,7 @@
 
 ## 项目运行
 
-项目运行可以[参考](https://github.com/fujianlian/mall/blob/master/README.md)这篇文章
+项目运行可以[参考](https://github.com/fujianlian/mall/blob/tencent-cloud/README.md)这篇文章
 
 **注意：** server/config.js中的相关配置需要替换成自己申请的；sql文件和图片在sql&images文件夹下，记得替换data.sql中的**IMAGE_BASE_URL**值
 
