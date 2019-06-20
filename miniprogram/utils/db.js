@@ -9,9 +9,31 @@ module.exports = {
     return db.collection('movie').get()
   },
 
-  getFavoriteRondom() {
+  getReviewRondom() {
     return wx.cloud.callFunction({
-      name: 'getFavoriteRondom'
+      name: 'getReviewRondom'
     })
+  },
+
+  favoriteReview(reviewId) {
+    return wx.cloud.callFunction({
+      name: 'favoriteReview',
+      data: {
+        reviewId
+      },
+    })
+  },
+
+  getMyFavorite() {
+    return wx.cloud.callFunction({
+      name: 'getMyFavorite',
+      data: {
+        reviewId
+      },
+    })
+  },
+
+  getMovieReview(movieId) {
+    return db.collection('review').where({movieId}).get()
   },
 }

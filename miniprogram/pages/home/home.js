@@ -46,7 +46,7 @@ Page({
     wx.showLoading({
       title: '正在加载中...',
     })
-    db.getFavoriteRondom().then(result => {
+    db.getReviewRondom().then(result => {
       wx.hideLoading()
       this.setData({
         movie: result.result

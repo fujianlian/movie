@@ -9,14 +9,14 @@ cloud.init({
 const db = cloud.database()
 
 // 云函数入口函数
-exports.main = async(event, context) => {
+exports.main = async (event, context) => {
   const wxContext = cloud.getWXContext()
   const user = wxContext.OPENID
-  const list = await db.collection('favorite').get()
+  const list = await db.collection('favo').get()
   if (list.data.length) {
     const f = list.data[Math.floor(Math.random() * list.data.length)]
     const m = await db.collection('movie').doc(f.movieId).get()
-    return Object.assign(f, m.data)
+    return Object.assign(f, m.data, { "reviewId": f._id })
   } else {
     return {}
   }

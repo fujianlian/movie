@@ -1,2 +1,19 @@
 <!--pages/film-review-list/list.wxml-->
-<text>pages/film-review-list/list.wxml</text>
+<view>
+  <view class='top-wrapper'>
+    <view wx:for='{{reviewList}}' wx:key='review' class='review-card' data-index='{{index}}' bindtap='goDetail'>
+      <view class='person-rec'>
+        <image src='{{ item.avatar }}' class='hot-avatar'></image>
+        <view class='hot-username'>{{ item.username }}</view>
+      </view>
+      <view wx:if='{{item.content}}' class='review-content content'>{{ item.content }}</view>
+      <view wx:if='{{item.audio}}' class='audio'>
+        <text class='iconfont iconbofang:before' style='font-size:44rpx'></text>
+        <text class='audio-time'>{{item.second}}s</text>
+      </view>
+    </view>
+  </view>
+  <view class='bottom-wrapper'>
+    <view class='bottom-text' bindtap='goHome'>回到首页</view>
+  </view>
+</view>

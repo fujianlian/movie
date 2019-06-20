@@ -1,1 +1,95 @@
-/* pages/personal/personal.wxss */
+/* client/pages/personal/personal.wxss */
+
+.top-wrapper {
+  flex: 1;
+  margin-bottom: 100rpx;
+  display: flex;
+  flex-flow: column;
+}
+
+.collect-text {
+  font-size: 28rpx;
+  line-height: 36rpx;
+  color: #ffa500;
+  text-align: center;
+  margin: 70rpx 0 40rpx;
+}
+
+.collect-card {
+  position: relative;
+  height: 300rpx;
+  background: white;
+  margin: 30rpx 40rpx 0;
+  border: solid 1rpx #eaeef1;
+}
+
+.collect-card:last-child {
+  margin-bottom: 30rpx;
+}
+
+.collect-image {
+  width: 203rpx;
+  height: 300rpx;
+}
+
+.collect-text-wrapper {
+  position: absolute;
+  top: 30rpx;
+  left: 243rpx;
+  right: 30rpx;
+  display: flex;
+  flex-flow: column;
+}
+
+.movie-title {
+  font-size: 36rpx;
+  line-height: 50rpx;
+  color: #333;
+  font-weight: 600;
+}
+
+/*
+设置文本最大行数：
+display: -webkit-box;
+overflow: hidden;
+text-overflow: ellipsis;
+word-break: break-all;
+-webkit-box-orient: vertical;
+-webkit-line-clamp: 2;
+*/
+
+.collect-rec {
+  position: absolute;
+  display: flex;
+  left: 253rpx;
+  bottom: 30rpx;
+  align-items: center;
+}
+
+.content {
+  margin-top: 20rpx;
+  display: -webkit-box;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  word-break: break-all;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 2;
+}
+
+.audio {
+  display: flex;
+  align-items: center;
+  margin-top: 25rpx;
+  padding-left: 36rpx;
+  width: 226rpx;
+  height: 60rpx;
+  background-color: #d6dee5;
+  border: solid 0.5rpx #bdcad6;
+  border-radius: 8rpx;
+  opacity: 0.9;
+}
+
+.audio-time {
+  margin-left: 10rpx;
+  font-size: 30rpx;
+}

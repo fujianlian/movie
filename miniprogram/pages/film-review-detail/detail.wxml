@@ -1,2 +1,33 @@
 <!--pages/film-review-detail/detail.wxml-->
-<text>pages/film-review-detail/detail.wxml</text>
+<view class='detail-wrapper'>
+  <image class='movie-image' src='{{ review.image }}'></image>
+  <view class='movie-wrapper'>
+    <view class='movie-title'>{{ review.title }}</view>
+    <view class='movie-rec'>
+      <image src='{{ review.avatar }}' class='rec-avator'></image>
+      <view class='rec-text' wx:if='{{review.username}}'>{{ review.username }}的影评</view>
+    </view>
+    <view wx:if='{{review.content}}' class='review-content content'>{{ review.content }}</view>
+    <view wx:if='{{review.audio}}' class='audio' bindtap='playAndStop'>
+      <text wx:if='{{isPlay}}' class='iconfont iconzanting:before' style='font-size:50rpx'></text>
+      <text wx:else class='iconfont iconbofang:before' style='font-size:50rpx'></text>
+      <text class='audio-time'>{{text}}</text>
+    </view>
+    <view class='button-wrapper-two' wx:if='{{!onlyShow&&!onlyCollect}}'>
+      <view class='button' bindtap='collectReview'>
+        <text class='iconfont iconstar:before' style='font-size:36rpx;color: #acbcca'></text>
+        <view class='button-text'>收藏影评</view>
+      </view>
+      <view class='button' bindtap='showEditActions'>
+        <text class='iconfont iconedit:before' style='font-size:36rpx;color: #acbcca'></text>
+        <view class='button-text'>写影评</view>
+      </view>
+    </view>
+    <view wx:if='{{onlyCollect}}' class='button-wrapper-three'>
+      <view class='button' bindtap='collectReview'>
+        <text class='iconfont iconstar:before' style='font-size:36rpx;color: #acbcca '></text>
+        <view class='button-text'>收藏影评</view>
+      </view>
+    </view>
+  </view>
+</view>

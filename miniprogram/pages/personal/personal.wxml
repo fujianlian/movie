@@ -1,2 +1,24 @@
-<!--pages/personal/personal.wxml-->
-<text>pages/personal/personal.wxml</text>
+<!--client/pages/personal/personal.wxml-->
+<view>
+  <view class='top-wrapper'>
+    <view wx:if='{{collectList.length}}' class='collect-text'>收藏的影评</view>
+    <view wx:for='{{collectList}}' wx:key='review' class='collect-card' data-index='{{index}}' s bindtap='goDetail'>
+      <image src='{{item.image}}' class='collect-image'></image>
+      <view class='collect-text-wrapper'>
+        <view class='collect-title'>{{ item.title }}</view>
+        <text wx:if='{{item.content}}' class='review-content content'>{{ item.content }}</text>
+        <view wx:if='{{item.audio}}' class='audio'>
+          <text class='iconfont iconbofang:before' style='font-size:44rpx'></text>
+          <text class='audio-time'>{{item.second}}s</text>
+        </view>
+      </view>
+      <view class='collect-rec'>
+        <image src='{{ item.avatar }}' class='hot-avatar'></image>
+        <view class='hot-username'>{{ item.username }}</view>
+      </view>
+    </view>
+  </view>
+  <view class='bottom-wrapper'>
+    <view class='bottom-text' bindtap='goHome'>回到首页</view>
+  </view>
+</view>

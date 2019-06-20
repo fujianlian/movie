@@ -44,8 +44,9 @@ Page({
 
   lookReview() {
     let id = this.data.movie._id
+    let image = this.data.movie.image
     wx.navigateTo({
-      url: `/pages/film-review-list/list?id=${id}`,
+      url: `/pages/film-review-list/list?id=${id}&image=${image}`,
     })
   }
 })
