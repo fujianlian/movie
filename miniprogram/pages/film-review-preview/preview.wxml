@@ -1,2 +1,30 @@
 <!--pages/film-review-preview/preview.wxml-->
-<text>pages/film-review-preview/preview.wxml</text>
+<view>
+  <image src='{{image}}' class='movie-image'></image>
+  <view class='movie-wrapper'>
+    <view class='movie-title'>{{ title }}</view>
+    <view class='movie-rec' bindtap='goReview'>
+      <image src='{{userInfo.avatarUrl}}' class='rec-avator'></image>
+      <view class='rec-text' wx:if='{{userInfo.nickName}}'>{{userInfo.nickName}}的影评</view>
+    </view>
+    <view class='movie-rec mark'>
+      <text class='iconfont iconyinhao:before mark-img'></text>
+      <view wx:if='{{type==="text"}}' class='content'>{{content}}</view>
+      <view wx:else class='audio' bindtap='playAndStop'>
+        <text wx:if='{{isPlay}}' class='iconfont iconzanting:before' style='font-size:50rpx'></text>
+        <text wx:else class='iconfont iconbofang:before' style='font-size:50rpx'></text>
+        <text class='audio-time'>{{text}}</text>
+      </view>
+    </view>
+    <view class='button-wrapper-two' wx:if='{{!onlyShow}}'>
+      <view class='button' bindtap='back'>
+        <text class='iconfont iconfanhuishangcengji:before' style='font-size:40rpx;color: #acbcca;margin-bottom:2rpx'></text>
+        <view class='button-text'>重新编辑</view>
+      </view>
+      <view class='button' bindtap='addReview'>
+        <text class='iconfont iconfabu:before' style='font-size:40rpx;color: #acbcca'></text>
+        <view class='button-text'>发布影评</view>
+      </view>
+    </view>
+  </view>
+</view>

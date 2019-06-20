@@ -9,7 +9,7 @@
       <view wx:if='{{item.content}}' class='review-content content'>{{ item.content }}</view>
       <view wx:if='{{item.audio}}' class='audio'>
         <text class='iconfont iconbofang:before' style='font-size:44rpx'></text>
-        <text class='audio-time'>{{item.second}}s</text>
+        <text class='audio-time'>{{item.seconds}}s</text>
       </view>
     </view>
   </view>

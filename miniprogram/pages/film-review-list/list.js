@@ -53,7 +53,7 @@ Page({
         title: '正在加载中...',
       })
     }
-    db.getMovieReview().then(result => {
+    db.getMovieReview(this.data.id).then(result => {
       wx.hideLoading()
       this.setData({
         reviewList: result.data

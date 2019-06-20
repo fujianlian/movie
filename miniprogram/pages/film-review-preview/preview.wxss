@@ -1,1 +1,90 @@
 /* pages/film-review-preview/preview.wxss */
+
+.movie-image {
+  position: absolute;
+  width: 204rpx;
+  height: 300rpx;
+  top: 30rpx;
+  left: 273rpx;
+  z-index: 99;
+}
+
+.movie-wrapper {
+  position: fixed;
+  top: 60rpx;
+  left: 50rpx;
+  right: 50rpx;
+  bottom: 50rpx;
+  display: flex;
+  flex-flow: column;
+  align-items: center;
+  background: white;
+  border: solid 1rpx #eaeef1;
+  border-radius: 10rpx;
+}
+
+.movie-title {
+  padding-top: 295rpx;
+  font-size: 40rpx;
+  line-height: 56rpx;
+  color: #333;
+  font-weight: 400;
+}
+
+.movie-rec {
+  display: flex;
+  margin-top: 30rpx;
+  align-items: center;
+  width: 100%;
+}
+
+.rec-avator {
+  width: 80rpx;
+  height: 80rpx;
+  border-radius: 40rpx;
+  margin-left: 55rpx;
+}
+
+.rec-text {
+  margin-left: 20rpx;
+  font-size: 30rpx;
+  color: #666;
+}
+
+.mark {
+  align-items: flex-start;
+}
+
+.mark-img {
+  font-size: 26rpx;
+  margin-left: 82rpx;
+  margin-top: 10rpx;
+  color: rgba(0, 0, 0, 0.8);
+}
+
+.content {
+  margin-left: 47rpx;
+  font-size: 26rpx;
+  line-height: 40rpx;
+  margin-right: 55rpx;
+  opacity: 0.8;
+}
+
+.audio {
+  display: flex;
+  align-items: center;
+  margin-left: 47rpx;
+  margin-top: 10rpx;
+  padding-left: 40rpx;
+  width: 300rpx;
+  height: 70rpx;
+  background-color: #d6dee5;
+  border: solid 0.5rpx #bdcad6;
+  border-radius: 8rpx;
+  opacity: 0.9;
+}
+
+.audio-time {
+  margin-left: 10rpx;
+  font-size: 30rpx;
+}

@@ -30,7 +30,7 @@ Page({
     let onlyCollect = this.data.onlyCollect
     onlyCollect = options.onlyCollect === undefined ? false : options.onlyCollect
     let text = this.data.text
-    text = review.second + 's'
+    text = review.seconds + 's'
     review.username = review.username
     innerAudioContext.src = review.audio
     this.setData({
@@ -102,16 +102,16 @@ Page({
     })
     innerAudioContext.onEnded((res) => {
       that.setData({
-        text: `${this.data.review.second}s`,
+        text: `${this.data.review.seconds}s`,
         isPlay: false
       })
     })
-
+s
     if (!innerAudioContext.paused) {
       innerAudioContext.pause()
       innerAudioContext.onPause(() => {
         that.setData({
-          text: `${this.data.review.second}s`,
+          text: `${this.data.review.seconds}s`,
           isPlay: false
         })
       })

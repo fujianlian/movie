@@ -36,4 +36,28 @@ module.exports = {
   getMovieReview(movieId) {
     return db.collection('review').where({movieId}).get()
   },
+
+  addReview(data) {
+    return util.isAuthenticated()
+      .then(() => {
+        return wx.cloud.callFunction({
+          name: 'addReview',
+          data,
+        })
+      })
+      .catch(() => {
+        wx.showToast({
+          icon: 'none',
+          title: '请先登录'
+        })
+        return {}
+      })
+  },
+
+  uploadAudio(tempFilePath) {
+    return wx.cloud.uploadFile({
+      cloudPath: `audio/${util.getId()}`,
+      filePath: tempFilePath,
+    })
+  }
 }
