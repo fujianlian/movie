@@ -5,7 +5,7 @@
     <view class='hot-title'>{{ movie.title }}</view>
     <view class='hot-rec' bindtap='goReview'>
       <image src='{{ movie.avatar }}' class='hot-avatar'></image>
-      <view class='hot-username'>{{ movie.username }}</view>
+      <view class='hot-username' wx:if="{{movie.username}}">{{ movie.username }}给你推荐了一部电影</view>
     </view>
   </view>
   <view class='bottom-wrapper'>

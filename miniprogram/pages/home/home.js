@@ -1,5 +1,7 @@
 // pages/home/home.js
 
+const db = require('../../utils/db.js')
+
 Page({
 
   /**
@@ -15,50 +17,38 @@ Page({
   /**
    * 生命周期函数--监听页面加载
    */
-  onLoad: function (options) {
-    //this.getRondom()
+  onLoad: function(options) {
+    this.getRondom()
   },
 
   /**
    * 生命周期函数--监听页面显示
    */
-  onShow: function () {
+  onShow: function() {
     // 同步授权状态
-   
+
   },
 
   /**
    * 随机获取热门电影
    */
   getRondom() {
-    let self = this
+  
     wx.showLoading({
       title: '正在加载中...',
     })
-    qcloud.request({
-      url: config.service.rondom,
-      success: function (response) {
-        wx.hideLoading()
-        if (!response.data.code) {
-          let m = response.data.data;
-          m.username = m.username + '给你推荐了一部电影'
-          self.setData({
-            movie: m
-          })
-        } else {
-          wx.showToast({
-            title: '加载数据失败',
-          })
-        }
-      },
-      fail: function (err) {
-        console.log(err)
-        wx.hideLoading()
-        wx.showToast({
-          title: '加载数据失败',
-        })
-      }
-    });
+    db.getFavoriteRondom().then(result => {
+      wx.hideLoading()
+      this.setData({
+        movie: result.result
+      })
+    }).catch(err => {
+      console.error(err)
+      wx.hideLoading()
+      wx.showToast({
+        title: '加载数据失败',
+      })
+    })
   },
 
   goDetail(event) {
@@ -89,7 +79,7 @@ Page({
     })
   },
 
-  onTapLogin: function () {
+  onTapLogin: function() {
     app.login({
       success: ({
         userInfo

@@ -8,4 +8,10 @@ module.exports = {
   getMovieList() {
     return db.collection('movie').get()
   },
+
+  getFavoriteRondom() {
+    return wx.cloud.callFunction({
+      name: 'getFavoriteRondom'
+    })
+  },
 }
