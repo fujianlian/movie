@@ -10,8 +10,7 @@ const db = cloud.database()
 
 // 云函数入口函数
 exports.main = async(event, context) => {
-  const wxContext = cloud.getWXContext()
-  const user = wxContext.OPENID
+  
   const list = await db.collection('review').get()
   if (list.data.length) {
     const f = list.data[Math.floor(Math.random() * list.data.length)]

@@ -86,17 +86,5 @@ Page({
     wx.navigateTo({
       url: `/pages/film-review-detail/detail?review=${review}`,
     })
-  },
-
-  onTapLogin: function() {
-    app.login({
-      success: ({
-        userInfo
-      }) => {
-        this.setData({
-          userInfo: userInfo
-        })
-      }
-    })
-  },
+  }
 })
