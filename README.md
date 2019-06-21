@@ -4,6 +4,8 @@
 
 [tencent-cloud分支](https://github.com/fujianlian/movie/tree/tencent-cloud)是基于**腾讯云服务**进行后端开发的，当前分支采用的是**云开发**进行后端开发，相比来说比较简单，建议选择**云开发**模式开发
 
+![qrcode](./data/gh_dce00e83a5a9_258.jpg)
+
 ## 目录
 
 - [UI交互图](#UI交互图)
