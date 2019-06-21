@@ -45,7 +45,7 @@ Page({
       favoriteList.forEach(favorite => {
         db.getReview(favorite.reviewId).then(result => {
           let review = result.data
-          db.getMovie(favorite.movieId).then(result => {
+          db.getMovie(review.movieId).then(result => {
             let movie = result.data
             console.log(movie)
             list.push(Object.assign(favorite, review, movie))
