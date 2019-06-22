@@ -106,7 +106,7 @@ Page({
         isPlay: false
       })
     })
-s
+
     if (!innerAudioContext.paused) {
       innerAudioContext.pause()
       innerAudioContext.onPause(() => {
