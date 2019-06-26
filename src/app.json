@@ -1,0 +1,15 @@
+{
+  "pages": [
+    "pages/home/main",
+    "pages/index/main",
+    "pages/counter/main"
+  ],
+  "window": {
+    "backgroundColor": "#F6F8FB",
+    "backgroundTextStyle": "dark",
+    "navigationBarBackgroundColor": "#fff",
+    "navigationBarTitleText": "侃影评",
+    "navigationBarTextStyle": "black"
+  },
+  "cloud": true
+}

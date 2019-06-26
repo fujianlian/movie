@@ -1,0 +1,151 @@
+<script>
+</script>
+
+<style>
+  .container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    box-sizing: border-box;
+  }
+
+  page {
+    background-color: #f6f8fb;
+  }
+
+  .bottom-wrapper {
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    display: flex;
+    align-items: center;
+    height: 100rpx;
+    border-top: solid 1rpx #eaeef1;
+    background: white;
+  }
+
+  .bottom-text {
+    flex: 1;
+    font-size: 30rpx;
+    line-height: 42rpx;
+    text-align: center;
+    color: #acbcca;
+  }
+
+  .button-wrapper {
+    display: flex;
+    justify-content: space-between;
+  }
+
+  .button-wrapper-two {
+    position: fixed;
+    bottom: 40rpx;
+    left: 90rpx;
+    right: 90rpx;
+    display: flex;
+    justify-content: space-between;
+  }
+
+  .button-wrapper-three {
+    position: fixed;
+    bottom: 60rpx;
+    display: flex;
+    justify-content: space-between;
+  }
+
+  .button {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #acbcca;
+    width: 250rpx;
+    height: 76rpx;
+    border: solid 0.5rpx #acbcca;
+    border-radius: 8rpx;
+    margin: 100rpx 15rpx 50rpx;
+  }
+
+  .button-text {
+    font-size: 30rpx;
+    color: #acbcca;
+    margin-left: 15rpx;
+  }
+
+  .hot-avatar {
+    width: 60rpx;
+    height: 60rpx;
+    border-radius: 30rpx;
+  }
+
+  .hot-username {
+    margin-left: 20rpx;
+    font-size: 30rpx;
+    line-height: 42rpx;
+    color: #666;
+  }
+
+  /* 详情页面样式 start */
+  .detail-wrapper {
+    position: relative;
+  }
+
+  .movie-image {
+    position: absolute;
+    width: 204rpx;
+    height: 300rpx;
+    top: 30rpx;
+    left: 273rpx;
+    z-index: 99;
+  }
+
+  .movie-wrapper {
+    position: fixed;
+    top: 60rpx;
+    left: 50rpx;
+    right: 50rpx;
+    bottom: 50rpx;
+    display: flex;
+    flex-flow: column;
+    align-items: center;
+    background: white;
+    border: solid 1rpx #eaeef1;
+    border-radius: 10rpx;
+  }
+
+  .movie-title {
+    padding-top: 295rpx;
+    font-size: 36rpx;
+    line-height: 50rpx;
+    color: #333;
+    font-weight: 400;
+  }
+
+  .movie-rec {
+    display: flex;
+    margin-top: 20rpx;
+    align-items: center;
+    width: 100%;
+  }
+
+  .rec-avator {
+    width: 76rpx;
+    height: 76rpx;
+    border-radius: 38rpx;
+    margin-left: 55rpx;
+  }
+
+  .rec-text {
+    margin-left: 20rpx;
+    font-size: 30rpx;
+    line-height: 42rpx;
+    opacity: 0.8;
+  }
+
+  .review-content {
+    font-size: 26rpx;
+    line-height: 40rpx;
+    color: #666;
+  }
+  /* 详情页面样式 end */
+</style>
