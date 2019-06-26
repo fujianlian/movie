@@ -1,7 +1,7 @@
 <template>
   <div>
     <div class='hot-wrapper'>
-      <img :src='movie.image' class='hot-image' @click='goDetail' alt="hot"/>
+      <img :src='movie.image' class='hot-image' @click='goDetail(movie)' alt="hot"/>
       <span class='hot-title'>{{ movie.title }}</span>
       <div class='hot-rec' @click='goReview'>
         <img :src='movie.avatar' class='hot-avatar' alt="avatar"/>
@@ -63,17 +63,8 @@
         })
       },
 
-      goDetail () {
-        let m = JSON.stringify(this.data.movie)
-        wx.navigateTo({
-          url: `/pages/movie-detail/detail?movie=${m}`
-        })
-      },
-
       goHot () {
-        wx.navigateTo({
-          url: '/pages/hot-movie/hot-movie'
-        })
+        this.$router.push('../hot-movie/main')
       },
 
       goPersonal () {
@@ -83,7 +74,7 @@
       },
 
       goReview () {
-        let review = this.data.movie
+        let review = this.movie
         review = JSON.stringify(review)
         wx.navigateTo({
           url: `/pages/film-review-detail/detail?review=${review}`

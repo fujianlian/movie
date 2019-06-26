@@ -43,6 +43,8 @@
 
 .iconedit:before {
   content: "\e607";
+  font-size:36rpx;
+  color: #acbcca
 }
 
 .iconme-:before {
@@ -53,6 +55,9 @@
 
 .iconchakan:before {
   content: "\e60b";
+  font-size:40rpx;
+  color: #acbcca;
+  margin-top:4rpx
 }
 
 .iconbofang:before {

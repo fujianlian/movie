@@ -1,8 +1,8 @@
 {
   "pages": [
     "pages/home/main",
-    "pages/index/main",
-    "pages/counter/main"
+    "pages/hot-movie/main",
+    "pages/movie-detail/main"
   ],
   "window": {
     "backgroundColor": "#F6F8FB",
