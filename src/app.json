@@ -3,7 +3,11 @@
     "pages/home/main",
     "pages/hot-movie/main",
     "pages/movie-detail/main",
-    "pages/person/main"
+    "pages/person/main",
+    "pages/film-review-detail/main",
+    "pages/film-review-list/main",
+    "pages/film-review-edit/main",
+    "pages/film-review-preview/main"
   ],
   "window": {
     "backgroundColor": "#F6F8FB",

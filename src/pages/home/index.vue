@@ -3,7 +3,7 @@
     <div class='hot-wrapper'>
       <img :src='movie.image' class='hot-image' @click='goDetail(movie)' alt="hot"/>
       <span class='hot-title'>{{ movie.title }}</span>
-      <div class='hot-rec' @click='goReview'>
+      <div class='hot-rec' @click='goReview(movie)'>
         <img :src='movie.avatar' class='hot-avatar' alt="avatar"/>
         <span class='hot-username' v-if="movie.username">{{ movie.username }}给你推荐了一部电影</span>
       </div>
@@ -69,14 +69,6 @@
 
       goPersonal () {
         this.$router.push('../person/main')
-      },
-
-      goReview () {
-        let review = this.movie
-        review = JSON.stringify(review)
-        wx.navigateTo({
-          url: `/pages/film-review-detail/detail?review=${review}`
-        })
       }
     },
     onLoad () {

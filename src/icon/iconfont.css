@@ -17,6 +17,9 @@
 
 .iconfanhuishangcengji:before {
   content: "\e601";
+  font-size:40rpx;
+  color: #acbcca;
+  margin-bottom:2rpx
 }
 
 .iconfabu:before {
@@ -25,6 +28,8 @@
 
 .iconstar:before {
   content: "\e605";
+  font-size:36rpx;
+  color: #acbcca
 }
 
 .iconzan:before {
@@ -39,6 +44,9 @@
 
 .iconrecord_after:before {
   content: "\e609";
+  font-size:38rpx;
+  color: #acbcca;
+  margin-top:4rpx
 }
 
 .iconedit:before {
@@ -62,11 +70,12 @@
 
 .iconbofang:before {
   content: "\e60d";
-  font-size:44rpx
+  font-size:46rpx
 }
 
 .iconzanting:before {
   content: "\e60e";
+  font-size:50rpx
 }
 
 .iconyinhao:before {

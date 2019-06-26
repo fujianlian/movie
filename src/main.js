@@ -24,5 +24,15 @@ Vue.prototype.goDetail = function (movie) {
   })
 }
 
+Vue.prototype.goReview = function (review) {
+  console.log(review)
+  this.$router.push({
+    path: '../film-review-detail/main',
+    query: {
+      review: JSON.stringify(review)
+    }
+  })
+}
+
 const app = new Vue(App)
 app.$mount()
