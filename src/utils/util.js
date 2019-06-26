@@ -1,6 +1,6 @@
 export function getUserInfo () {
   return new Promise(function (resolve, reject) {
-    this.isAuthenticated().then(() => {
+    isAuthenticated().then(() => {
       wx.getUserInfo({
         success: res => {
           resolve(res.userInfo)

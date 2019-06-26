@@ -6,11 +6,11 @@
       <span class='movie-desc'>{{ movie.description }}</span>
       <div class='button-wrapper'>
         <div class='button' @click='lookReview'>
-          <text class='iconfont iconchakan:before'></text>
+          <i class='iconfont iconchakan:before'></i>
           <span class='button-text'>查看影评</span>
         </div>
         <div class='button' @click="showEditActions">
-          <text class='iconfont iconedit:before'></text>
+          <i class='iconfont iconedit:before'></i>
           <span class='button-text'>添加影评</span>
         </div>
       </div>

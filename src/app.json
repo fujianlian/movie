@@ -2,7 +2,8 @@
   "pages": [
     "pages/home/main",
     "pages/hot-movie/main",
-    "pages/movie-detail/main"
+    "pages/movie-detail/main",
+    "pages/person/main"
   ],
   "window": {
     "backgroundColor": "#F6F8FB",

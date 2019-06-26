@@ -62,6 +62,7 @@
 
 .iconbofang:before {
   content: "\e60d";
+  font-size:44rpx
 }
 
 .iconzanting:before {

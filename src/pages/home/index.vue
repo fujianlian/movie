@@ -18,7 +18,7 @@
           <i class='iconfont iconme-:before'></i>
           <span class='login-img-text'>我的</span>
         </div>
-        <button class="login-text" open-type='getUserInfo' bindgetuserinfo='onTapLogin'>我的</button>
+        <button class="login-text" open-type='getUserInfo' @click='onTapLogin'>我的</button>
       </div>
       <div v-else class='bottom-btn' @click='goPersonal'>
         <i class='iconfont iconme-:before'></i>
@@ -68,9 +68,7 @@
       },
 
       goPersonal () {
-        wx.navigateTo({
-          url: '/pages/personal/personal'
-        })
+        this.$router.push('../person/main')
       },
 
       goReview () {
