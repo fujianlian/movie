@@ -8,8 +8,5 @@ Vue.config.errorHandler = function (err) {
   }
 }
 
-const innerAudioContext = wx.createInnerAudioContext()
-Vue.prototype.innerAudioContext = innerAudioContext
-
 const app = new Vue(App)
 app.$mount()

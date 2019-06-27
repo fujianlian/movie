@@ -45,7 +45,6 @@
         movieId: '',
         image: '',
         title: '',
-        id: 0,
         type: '',
         text: '',
         isPlay: false,
@@ -76,7 +75,6 @@
 
       // 上传影评
       uploadPreview (data) {
-        console.log(data)
         this.$db.addReview(data).then(() => {
           wx.hideLoading()
           wx.showToast({
@@ -110,9 +108,7 @@
         wx.showLoading({
           title: '正在发布影评...'
         })
-        this.setData({
-          isUpload: true
-        })
+        this.isUpload = true
 
         this.$db.uploadAudio(this.audio).then(result => {
           let data = {
@@ -173,8 +169,7 @@
 
       this.title = options.title
       this.image = options.image
-      this.id = options.id
-      this.movieId = options.movieId
+      this.movieId = options.id
       this.type = options.type
       this.content = this.type !== this.typeText ? options.content : ''
       this.audio = this.type === this.typeText ? options.audio.replace('x-y', '=') : ''

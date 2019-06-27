@@ -34,6 +34,8 @@
 </template>
 
 <script>
+  const innerAudioContext = wx.createInnerAudioContext()
+
   export default {
     data () {
       return {
@@ -77,8 +79,6 @@
 
       // 写影评
       editReview (type) {
-        console.log(this.review)
-
         this.$router.push({
           path: '../film-review-edit/main',
           query: {
@@ -105,25 +105,25 @@
 
       // 播放声音/停止播放
       playAndStop () {
-        this.innerAudioContext.onError((res) => {
+        innerAudioContext.onError((res) => {
           console.log(res.errMsg)
           console.log(res.errCode)
         })
-        this.innerAudioContext.onEnded(() => {
+        innerAudioContext.onEnded(() => {
           this.text = `${this.review.seconds}s`
           this.isPlay = false
         })
-        if (!this.innerAudioContext.paused) {
-          this.innerAudioContext.pause()
-          this.innerAudioContext.onPause(() => {
+        if (!innerAudioContext.paused) {
+          innerAudioContext.pause()
+          innerAudioContext.onPause(() => {
             this.text = `${this.review.seconds}s`
             this.isPlay = false
           })
         } else {
-          this.innerAudioContext.autoplay = true
-          this.innerAudioContext.play()
+          innerAudioContext.autoplay = true
+          innerAudioContext.play()
 
-          this.innerAudioContext.onPlay(() => {
+          innerAudioContext.onPlay(() => {
             this.text = '正在播放'
             this.isPlay = true
           })
@@ -136,7 +136,11 @@
       this.onlyShow = options.onlyShow === undefined ? false : options.onlyShow
       this.onlyCollect = options.onlyCollect === undefined ? false : options.onlyCollect
       this.text = this.review.seconds + 's'
-      this.innerAudioContext.src = this.review.audio
+      innerAudioContext.src = this.review.audio
+    },
+
+    onUnload () {
+      innerAudioContext.stop()
     }
   }
 </script>

@@ -95,9 +95,7 @@
       onVoiceStop (voiceInfo) {
         tempFilePath = voiceInfo.tempFilePath
         let duration = voiceInfo.duration
-        this.setData({
-          text: '长按录音'
-        })
+        this.text = '长按录音'
         // 结束录音、隐藏Toast提示框
         wx.hideToast()
         // 不允许小于 1 秒
@@ -132,12 +130,15 @@
     },
 
     onLoad (options) {
-      console.log(options)
       this.title = options.title
       this.image = options.image
       this.id = options.id
       this.type = options.type
       recorderManager.onStop(this.onVoiceStop)
+    },
+
+    onUnload () {
+      recorderManager.stop()
     }
   }
 </script>
