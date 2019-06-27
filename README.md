@@ -59,6 +59,18 @@
 
 * 上传云函数，运行即可
 
+### npm运行
+
+没有安装npm的话先安装，然后运行以下代码
+
+```
+cd movie
+
+npm install
+
+npm run dev
+```
+
 ## 云开发参考文档 
 
 - [云开发文档](https://developers.weixin.qq.com/miniprogram/dev/wxcloud/basis/getting-started.html) 
