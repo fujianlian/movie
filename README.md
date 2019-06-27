@@ -2,7 +2,11 @@
 
 侃影评是一个电影影评小程序，该项目允许用户对时下最热门的电影撰写影评。除此之外，用户还可收藏并分享电影影评。
 
-当前分支是基于腾讯云服务进行后端开发的，[master分支](https://github.com/fujianlian/movie)是基于**小程序云开发**进行后端开发的，相对来说比较简单，建议选择这种模式开发
+当前分支是基于**腾讯云服务**进行后端开发的，[master分支](https://github.com/fujianlian/movie)是基于**小程序云开发**进行后端开发的，[mpvue分支](https://github.com/fujianlian/movie/tree/mpvue)也是采用**云开发**进行后端开发的，不过代码编写采用了[mpvue](http://mpvue.com/)
+
+相对于**腾讯云服务**模式，**云开发**相比来说比较简单，建议选择**云开发**模式开发
+
+![qrcode](./sql&images/gh_dce00e83a5a9_258.jpg)
 
 ## 目录
 
