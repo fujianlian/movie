@@ -72,7 +72,7 @@ Page({
   // 写影评
   editReview(type) {
     let image = this.data.review.image
-    let id = this.data.review.movie_id
+    let id = this.data.review.movieId
     let title = this.data.review.title
     wx.navigateTo({
       url: `/pages/film-review-edit/edit?title=${title}&id=${id}&image=${image}&type=${type}`,
